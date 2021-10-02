@@ -128,8 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="example">
-            sdafsdfsdfsdf
-        </div>
+        <div id='example'></div>
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
