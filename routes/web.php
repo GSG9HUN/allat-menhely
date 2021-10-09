@@ -18,11 +18,13 @@ Route::get('/', function () {
     return view('view_blades.rolunk');
 })->name('example');
 
-
+Auth::routes();
 Route::get('/register',function (){
     return view('view_blades.register');
 })->name('register');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->middleware('auth')
+    ->name('home');
