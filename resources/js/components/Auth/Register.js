@@ -44,6 +44,11 @@ export default class Register extends React.Component {
     render() {
         return (
             <div>
+
+                {this.state.errors
+                //&& <ErrorWriter errors={this.state.errors}/>
+                }
+
                 <form onSubmit={this.handleSubmit}>
                     <div className={'form-control'}>
                         <div className={'form-item'}>

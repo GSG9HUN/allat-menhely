@@ -21,6 +21,7 @@ class CreateShelterTable extends Migration
             $table->string('street');
             $table->string('house_number');
             $table->foreignId('animal_id')->references('id')->on('animal');
+            $table->foreignId('user_id')->references('id')->on('user');
         });
     }
 

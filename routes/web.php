@@ -19,11 +19,6 @@ Route::get('/', function () {
 })->name('example');
 
 Auth::routes();
-Route::get('/register',function (){
-    return view('view_blades.register');
-})->name('register');
-
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
     ->middleware('auth')

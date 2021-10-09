@@ -14,7 +14,7 @@ class Shelter extends Model
     protected $table = 'shelter';
 
     protected $fillable = [
-        'name', 'phone_number', 'settlement_id', 'street', 'house_number', 'animal_id'
+        'name', 'phone_number', 'settlement_id', 'street', 'house_number', 'animal_id', 'user_id'
     ];
 
     protected $primaryKey = 'id';

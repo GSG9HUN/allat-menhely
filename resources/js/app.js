@@ -1,4 +1,6 @@
 require('./bootstrap');
 
 require('./components/Example');
-require('./components/RegisterComponent/Register');
+
+require('./components/Auth/Login')
+require('./components/Auth/Register')
