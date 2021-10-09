@@ -18,6 +18,6 @@
 <div class="footer">
     @include('layouts.footer.footer')
 </div>
-<script href="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
