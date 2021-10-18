@@ -15,8 +15,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('view_blades.rolunk');
-})->name('example');
+    return view('view_blades.welcome');
+})->name('welcome');
+
+
+Route::get('/about_us', function () {
+    return view('view_blades.about_us');
+})->name('about');
+
+
+Route::get('/animals', function () {
+    return view('view_blades.animals');
+})->name('animals');
+
+Route::get('/shelters', function () {
+    return view('view_blades.shelters');
+})->name('shelters');
+
 
 Auth::routes();
 
