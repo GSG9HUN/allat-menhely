@@ -18,6 +18,7 @@ class Animal extends Model
 
     protected $primaryKey = 'id';
 
+
     public $timestamps = null;
 
 

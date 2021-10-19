@@ -2,20 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ImagesController extends Controller
 {
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index(): \Illuminate\Contracts\Support\Renderable
+    public function index()
     {
-        return view('admin_views.welcome');
+
     }
 
     public function create()
