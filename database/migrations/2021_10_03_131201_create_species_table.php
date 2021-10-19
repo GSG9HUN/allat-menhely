@@ -17,7 +17,7 @@ class CreateSpeciesTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('category_id')->references('id')->on('category');
-            $table->string('hair_type')->nullable();
+            $table->string('hair_type')->nullable()->default(null);
         });
     }
 
