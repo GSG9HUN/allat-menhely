@@ -10,10 +10,10 @@
 </div>
 <nav>
     <ul>
-        <li><a href='{{route('animals')}}'>Allatok</a></li>
+        <li><a href='{{route('animals')}}'>Állatok</a></li>
         <li><a href="{{route('shelters')}}">Menhelyek</a></li>
-        <li><a href="{{route('about')}}">Rolunk</a></li>
-        <li><a href="{{route('login')}}">Belepes</a></li>
-        <!--<li><a href="#elements">Elements</a></li>-->
+        <li><a href="{{route('about')}}">Rólunk</a></li>
+        <li><a href="{{route('login')}}">Belépés</a></li>
+        <li><a href="#elements">Támogatóink</a></li>
     </ul>
 </nav>

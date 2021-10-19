@@ -16,7 +16,7 @@ class CreateAnimalTable extends Migration
         Schema::create('animal', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->foreignId('category_id')->references('id')->on('category');
+            $table->foreignId('species_id')->references('id')->on('species');
             $table->foreignId('sex_id')->references('id')->on('sex');
             $table->foreignId('size_id')->references('id')->on('size');
             $table->foreignId('color_id')->references('id')->on('color');

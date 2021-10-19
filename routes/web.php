@@ -35,6 +35,6 @@ Route::get('/shelters', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+Route::get('/admin_dashboard', [App\Http\Controllers\HomeController::class, 'index'])
     ->middleware('auth')
-    ->name('home');
+    ->name('admin_dashboard');

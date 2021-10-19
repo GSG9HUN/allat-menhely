@@ -15,7 +15,9 @@ class CreateSpeciesTable extends Migration
     {
         Schema::create('species', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
+            $table->foreignId('category_id')->references('id')->on('category');
+            $table->string('hair_type')->nullable();
         });
     }
 
