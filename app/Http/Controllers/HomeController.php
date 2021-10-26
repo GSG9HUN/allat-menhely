@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index(): \Illuminate\Contracts\Support\Renderable
     {
-        return view('admin_views.welcome');
+        return view('super_admin_views.map');
     }
 
     public function create()
