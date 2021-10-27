@@ -1,8 +1,7 @@
 <div class="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="#" class="simple-text logo-mini">{{ __('BD') }}</a>
-            <a href="#" class="simple-text logo-normal">{{ __('Black Dashboard') }}</a>
+            <a style="text-align: center" href="#" class="simple-text logo-normal">{{ __('Super Admin Dashboard') }}</a>
         </div>
         <div id="nav-bar">
 

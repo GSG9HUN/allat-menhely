@@ -16,16 +16,15 @@ export default class NavBar extends React.Component {
 
         return this.state.navBar.map((element,index)=>{
             return(
-                <li key={index}>
+                <li style={{display:'flex'}} key={index}>
                     <a href={element.path}>
-                    <i   className = "tim-icons icon-chart-pie-36" />
-                    <p>{element.title}</p>
+                        <img style={{width:20, height:20}} src={element.src} alt={element.alt}/>
+                        <span style={{marginLeft:10}}>{element.title}</span>
+
                     </a>
                 </li>
             )
         })
-
-        console.log(this.state.navBar)
     }
 
     render() {

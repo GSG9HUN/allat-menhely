@@ -9,7 +9,7 @@ class Invitation extends Model
 {
     use HasFactory;
 
-    protected $table = 'color';
+    protected $table = 'invitations';
 
     protected $fillable = [
         'email','invitation_token','registered_at'
