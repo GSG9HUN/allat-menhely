@@ -1,0 +1,7 @@
+.ReactModal__Overlay--after-open {
+  z-index: 1;
+}
+
+.form-item {
+  display: flex;
+}

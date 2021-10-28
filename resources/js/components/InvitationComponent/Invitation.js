@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import InvitationModal from "./InvitationModal";
 
 
 export default class Invitation extends React.Component {
@@ -64,6 +65,9 @@ export default class Invitation extends React.Component {
                     {this.renderInvitations()}
                     </tbody>
                 </table>
+                <div className={'row-buttons'}>
+                    <InvitationModal reRenderInvitations ={this.reRenderInvitations}/>
+                </div>
             </div>
         )
     }

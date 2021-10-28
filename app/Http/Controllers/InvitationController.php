@@ -11,14 +11,36 @@ class InvitationController extends Controller
     function index(): JsonResponse
     {
         $result = Invitation::query()->get();
-        return response()->json(['invitations'=>$result]);
+        return response()->json(['invitations' => $result]);
     }
 
-    function store(Request $request){
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    function store(Request $request)
+    {
+
+        $this->validate($request,
+            ['email' => 'required']
+        );
+
+        $invitation = new Invitation();
+        $invitation->email = $request['email'];
+        $invitation->generateInvitationToken();
+        $saved = $invitation->save();
+
+        if($saved){
+            return response()->json([$invitation]);
+        }else{
+            return response()->json(['error']);
+        }
+
+
 
     }
 
-    function destroy(Request $request){
+    function destroy(Request $request)
+    {
 
     }
 }

@@ -17,14 +17,20 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+
+    private const USER= 1;
+    private const ADMIN= 2;
+    private const SUPER_ADMIN= 3;
+
     protected $fillable = [
         'first_name',
         'last_name',
-        'phone_number',
         'email',
         'password',
+        'role_id'
     ];
 
+    protected $table ='users';
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -43,4 +49,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function isAdmin(): bool
+    {
+        return $this->role_id === self::ADMIN;
+    }
+
+    public function isUser(): bool
+    {
+        return $this->role_id === self::USER;
+    }
+
+    public function IsSuperAdmin(): bool
+    {
+        return $this->role_id === self::SUPER_ADMIN;
+    }
 }

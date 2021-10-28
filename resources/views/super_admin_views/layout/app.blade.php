@@ -16,6 +16,7 @@
         <!-- CSS -->
         <link href="{{ asset('css/black-dashboard.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/theme.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
         <script src="{{ asset('js/app.js') }}" defer></script>
 
     </head>
