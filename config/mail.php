@@ -50,7 +50,9 @@ return [
         ],
 
         'mailgun' => [
-            'transport' => 'mailgun',
+            //'transport' => 'mailgun',
+            'domain' => env('MAILGUN_DOMAIN'),
+            'secret' => env('MAILGUN_SECRET'),
         ],
 
         'postmark' => [

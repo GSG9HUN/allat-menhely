@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationInvitationSend;
 use App\Models\Invitation;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class InvitationController extends Controller
 {
@@ -29,12 +31,15 @@ class InvitationController extends Controller
         $invitation->generateInvitationToken();
         $saved = $invitation->save();
 
-        if($saved){
+        Mail::to($invitation->email)->send(new RegistrationInvitationSend());
+
+
+
+        if ($saved) {
             return response()->json([$invitation]);
-        }else{
+        } else {
             return response()->json(['error']);
         }
-
 
 
     }
