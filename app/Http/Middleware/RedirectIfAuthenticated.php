@@ -25,9 +25,9 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 $role = Auth::user()->role_id;
                 switch ($role){
-                    case 2:
+                    case 3:
                         return redirect(RouteServiceProvider::SUPER_ADMIN_DASHBOARD);
-                    case 1:
+                    case 2:
                         return redirect(RouteServiceProvider::ADMIN_DASHBOARD);
                     default:
                         return redirect(RouteServiceProvider::HOME);
