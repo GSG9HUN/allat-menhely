@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             [
                 'first_name' => 'Sántha',
                 'last_name' => 'Máté Imre',
-                'email' => 'santha.mate22@gmail..com',
+                'email' => 'santha.mate22@gmail.com',
                 'email_verified_at' =>Carbon::now()->format('Y-m-d H:i:s'),
                 'password' => Hash::make('kecskepasztor22'),
                 'role_id' => '3'

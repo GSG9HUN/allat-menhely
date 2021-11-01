@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Middleware\HasInvitation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +34,16 @@ Route::get('/shelters', function () {
     return view('view_blades.shelters');
 })->name('shelters');
 
+Auth::routes(['register'=>false]);
 
-Auth::routes();
+
+Route::get('/register',[RegisterController::class,'showRegistrationForm'])
+    ->middleware(HasInvitation::class)
+    ->name('registerShow');
+
+Route::post('/register',[RegisterController::class,'create'])
+    ->name('registerCreate');
+
 
 Route::get('/super_admin_dashboard', [App\Http\Controllers\HomeController::class, 'index'])
     ->middleware('auth')

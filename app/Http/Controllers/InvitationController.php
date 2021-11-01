@@ -31,7 +31,7 @@ class InvitationController extends Controller
         $invitation->generateInvitationToken();
         $saved = $invitation->save();
 
-        Mail::to($invitation->email)->send(new RegistrationInvitationSend());
+        Mail::to($invitation->email)->send(new RegistrationInvitationSend($invitation->invitation_token));
 
 
 

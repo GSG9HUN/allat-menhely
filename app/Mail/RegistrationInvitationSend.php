@@ -11,14 +11,16 @@ class RegistrationInvitationSend extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $invitationToken;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($invitationToken)
     {
-        //
+        $this->invitationToken = $invitationToken;
     }
 
     /**
@@ -28,6 +30,8 @@ class RegistrationInvitationSend extends Mailable
      */
     public function build(): RegistrationInvitationSend
     {
-        return $this->from('virtualismenhely99@gmail.com')->view('Emails.RegistrationInvitation');
+        return $this->from('virtualismenhely99@gmail.com')
+            ->view('Emails.RegistrationInvitation')
+            ->with(['invitationToken' => $this->invitationToken]);
     }
 }
