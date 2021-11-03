@@ -26,6 +26,8 @@ class VerificationController extends Controller
      *
      * @var string
      */
+    protected $redirectToAdmin = RouteServiceProvider::ADMIN_DASHBOARD;
+    protected $redirectToSuperAdmin = RouteServiceProvider::SUPER_ADMIN_DASHBOARD;
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**

@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use App\Notifications\VerificationEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
@@ -65,4 +65,10 @@ class User extends Authenticatable
     {
         return $this->role_id === self::SUPER_ADMIN;
     }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerificationEmail());
+    }
+
 }

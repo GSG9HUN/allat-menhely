@@ -34,7 +34,10 @@ Route::get('/shelters', function () {
     return view('view_blades.shelters');
 })->name('shelters');
 
-Auth::routes(['register'=>false]);
+Auth::routes([
+    'verify'=>true,
+    'register'=>false,
+]);
 
 
 Route::get('/register',[RegisterController::class,'showRegistrationForm'])
@@ -46,9 +49,11 @@ Route::post('/register',[RegisterController::class,'create'])
 
 
 Route::get('/super_admin_dashboard', [App\Http\Controllers\HomeController::class, 'index'])
-    ->middleware('auth')
+    ->middleware(['auth','verified'])
     ->name('super_admin_dashboard');
 
 Route::get('/super_admin_dashboard/invitation', function () {
     return view('super_admin_views.invitations');
-})->middleware('auth')->name('invitations');
+})
+    ->middleware(['auth','verified'])
+    ->name('invitations');
