@@ -10,27 +10,29 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 
-class VerificationEmail extends Notification
+class ResetPasswordEmail extends Notification
 {
     use Queueable;
+
+    private $token;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
-    public function via($notifiable)
+    public function via($notifiable): array
     {
         return ['mail'];
     }
@@ -38,44 +40,38 @@ class VerificationEmail extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @param  mixed  $notifiable
+     * @return MailMessage
      */
     public function toMail($notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Regisztráció megerősítés!')
-            ->view('Emails.EmailVerification',['url'=>$this->verificationUrl($notifiable)]);
-
+            ->subject('Jelszó emlékesztető!')
+            ->view('Emails.PasswordReset',['url'=>$this->passwordResetURL($notifiable,$this->token)]);
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toArray($notifiable): array
     {
         return [
             //
         ];
     }
 
-    /*
-* Build the verification URL
-*
-* @return URL
-*/
-    protected function verificationUrl($notifiable): string
+    protected function passwordResetURL($notifiable,$token): string
     {
         return URL::temporarySignedRoute(
-            'verification.verify',
+            'password.reset',
             Carbon::now()->addMinutes(
-                Config::get('auth.verification.expire', 5)),
+                Config::get('auth.reset.expire', 5)),
             [
-                'id' => $notifiable->getKey(),
-                'hash' => sha1($notifiable->getEmailForVerification()),
+                'token'=>$token,
+                'email'=>$notifiable->email,
             ]
         );
     }

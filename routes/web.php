@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Middleware\HasInvitation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,8 +38,21 @@ Route::get('/shelters', function () {
 
 Auth::routes([
     'verify'=>true,
+    'reset'=>false,
     'register'=>false,
 ]);
+
+Route::get('password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])
+    ->name('password.request');
+
+Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])
+    ->name('password.reset');
+
+Route::post('password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])
+    ->name('password.email');
+
+Route::post('password/reset', [ResetPasswordController::class,'reset'])
+    ->name('password.update');
 
 
 Route::get('/register',[RegisterController::class,'showRegistrationForm'])
