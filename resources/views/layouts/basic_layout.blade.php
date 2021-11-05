@@ -10,12 +10,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/header.css')}}" />
     <link rel="stylesheet" href="{{asset('css/fontawesome-all.min.css')}}" />
     <noscript><link rel="stylesheet" href="{{asset('css/noscript.css')}}" /></noscript>
 </head>
 <body class="is-preload">
 <div id="wrapper">
-    <header id="header">
+    <header class="header">
         @include('layouts.header.header')
     </header>
     <div class="content">

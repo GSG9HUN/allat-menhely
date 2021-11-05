@@ -1140,9 +1140,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1234,7 +1237,7 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
+	#nav {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1259,7 +1262,7 @@ input, select, textarea {
 		text-align: center;
 	}
 
-		#header > * {
+		#nav > * {
 			-moz-transition: opacity 0.325s ease-in-out;
 			-webkit-transition: opacity 0.325s ease-in-out;
 			-ms-transition: opacity 0.325s ease-in-out;
@@ -1268,7 +1271,7 @@ input, select, textarea {
 			margin-top: 3.5rem;
 		}
 
-			#header > *:before {
+			#nav > *:before {
 				content: '';
 				display: block;
 				position: absolute;
@@ -1279,15 +1282,15 @@ input, select, textarea {
 				background: #ffffff;
 			}
 
-		#header > :first-child {
+		#nav > :first-child {
 			margin-top: 0;
 		}
 
-			#header > :first-child:before {
+			#nav > :first-child:before {
 				display: none;
 			}
 
-		#header .logo {
+		#nav .logo {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
@@ -1295,11 +1298,11 @@ input, select, textarea {
 			border-radius: 100%;
 		}
 
-			#header .logo .icon:before {
+			#nav .logo .icon:before {
 				font-size: 2rem;
 			}
 
-		#header .content {
+		#nav .content {
 			border-style: solid;
 			border-color: #ffffff;
 			border-top-width: 1px;
@@ -1307,7 +1310,7 @@ input, select, textarea {
 			max-width: 100%;
 		}
 
-			#header .content .inner {
+			#nav .content .inner {
 				-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
 				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
@@ -1321,18 +1324,18 @@ input, select, textarea {
 				overflow: hidden;
 			}
 
-				#header .content .inner > :last-child {
+				#nav .content .inner > :last-child {
 					margin-bottom: 0;
 				}
 
-			#header .content p {
+			#nav .content p {
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 				font-size: 0.8rem;
 				line-height: 2;
 			}
 
-		#header nav ul {
+		#nav nav ul {
 			display: -moz-flex;
 			display: -webkit-flex;
 			display: -ms-flex;
@@ -1344,16 +1347,16 @@ input, select, textarea {
 			border-radius: 4px;
 		}
 
-			#header nav ul li {
+			#nav nav ul li {
 				padding-left: 0;
 				border-left: solid 1px #ffffff;
 			}
 
-				#header nav ul li:first-child {
+				#nav nav ul li:first-child {
 					border-left: 0;
 				}
 
-				#header nav ul li a {
+				#nav nav ul li a {
 					display: block;
 					min-width: 7.5rem;
 					height: 2.75rem;
@@ -1365,15 +1368,15 @@ input, select, textarea {
 					border-bottom: 0;
 				}
 
-					#header nav ul li a:hover {
+					#nav nav ul li a:hover {
 						background-color: rgba(255, 255, 255, 0.075);
 					}
 
-					#header nav ul li a:active {
+					#nav nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
 
-		#header nav.use-middle:after {
+		#nav nav.use-middle:after {
 			content: '';
 			display: block;
 			position: absolute;
@@ -1384,11 +1387,11 @@ input, select, textarea {
 			background: #ffffff;
 		}
 
-		#header nav.use-middle ul li.is-middle {
+		#nav nav.use-middle ul li.is-middle {
 			border-left: 0;
 		}
 
-		body.is-article-visible #header {
+		body.is-article-visible #nav {
 			-moz-transform: scale(0.95);
 			-webkit-transform: scale(0.95);
 			-ms-transform: scale(0.95);
@@ -1400,18 +1403,18 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		body.is-preload #header {
+		body.is-preload #nav {
 			-moz-filter: blur(0.125rem);
 			-webkit-filter: blur(0.125rem);
 			-ms-filter: blur(0.125rem);
 			filter: blur(0.125rem);
 		}
 
-			body.is-preload #header > * {
+			body.is-preload #nav > * {
 				opacity: 0;
 			}
 
-			body.is-preload #header .content .inner {
+			body.is-preload #nav .content .inner {
 				max-height: 0;
 				padding-top: 0;
 				padding-bottom: 0;
@@ -1420,7 +1423,7 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
-			#header .content p br {
+			#nav .content p br {
 				display: none;
 			}
 
@@ -1428,30 +1431,30 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#header > * {
+			#nav > * {
 				margin-top: 2rem;
 			}
 
-				#header > *:before {
+				#nav > *:before {
 					top: calc(-2rem - 1px);
 					height: calc(2rem + 1px);
 				}
 
-			#header .logo {
+			#nav .logo {
 				width: 4.75rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
 			}
 
-				#header .logo .icon:before {
+				#nav .logo .icon:before {
 					font-size: 1.75rem;
 				}
 
-			#header .content .inner {
+			#nav .content .inner {
 				padding: 2.5rem 1rem;
 			}
 
-			#header .content p {
+			#nav .content p {
 				line-height: 1.875;
 			}
 
@@ -1459,15 +1462,15 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-			#header {
+			#nav {
 				padding: 1.5rem 0;
 			}
 
-				#header .content .inner {
+				#nav .content .inner {
 					padding: 2.5rem 0;
 				}
 
-				#header nav ul {
+				#nav nav ul {
 					-moz-flex-direction: column;
 					-webkit-flex-direction: column;
 					-ms-flex-direction: column;
@@ -1476,23 +1479,23 @@ input, select, textarea {
 					max-width: 100%;
 				}
 
-					#header nav ul li {
+					#nav nav ul li {
 						border-left: 0;
 						border-top: solid 1px #ffffff;
 					}
 
-						#header nav ul li:first-child {
+						#nav nav ul li:first-child {
 							border-top: 0;
 						}
 
-						#header nav ul li a {
+						#nav nav ul li a {
 							height: 3rem;
 							line-height: 3rem;
 							min-width: 0;
 							width: 100%;
 						}
 
-				#header nav.use-middle:after {
+				#nav nav.use-middle:after {
 					display: none;
 				}
 

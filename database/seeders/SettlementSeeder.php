@@ -1812,190 +1812,446 @@ class SettlementSeeder extends Seeder
                 'name' => 'Cún',
                 'county_id' => 2
             ],
-           /* [
-                'name' => '',
-                'county_id' => ''
+            [
+                'name' => 'Csabacsűd',
+                'county_id' => 3
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csabaszabadi',
+                'county_id' => 3
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csabdi',
+                'county_id' => 6
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csabrendek',
+                'county_id' => 18
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csáfordjánosfa',
+                'county_id' => 7
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csaholc',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csajág',
+                'county_id' => 18
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csákány',
+                'county_id' => 14
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csákánydoroszló',
+                'county_id' => 17
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csákberény',
+                'county_id' => 6
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csákvár',
+                'county_id' => 6
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csanádalberti',
+                'county_id' => 5
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csanádapáca',
+                'county_id' => 3
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csanádpalota',
+                'county_id' => 5
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csánig',
+                'county_id' => 17
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csány',
+                'county_id' => 9
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csányoszró',
+                'county_id' => 2
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csanytelek',
+                'county_id' => 5
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csapi',
+                'county_id' => 19
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csapod',
+                'county_id' => 7
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csárdaszállás',
+                'county_id' => 3
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csarnóta',
+                'county_id' => 2
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csaroda',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Császár',
+                'county_id' => 11
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Császártöltés',
+                'county_id' => 1
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Császló',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csátalja',
+                'county_id' => 1
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csatár',
+                'county_id' => 19
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csataszög',
+                'county_id' => 10
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csatika',
+                'county_id' => 11
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csávoly',
+                'county_id' => 1
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csebény',
+                'county_id' => 2
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csécse',
+                'county_id' => 12
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csegöld',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csehbánya',
+                'county_id' => 18
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csehi',
+                'county_id' => 17
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csehimindszent',
+                'county_id' => 17
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csém',
+                'county_id' => 11
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csemő',
+                'county_id' => 13
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csempeszkopács',
+                'county_id' => 17
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csengele',
+                'county_id' => 5
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csenger',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csengersima',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csengerújfalu',
+                'county_id' => 15
             ],
             [
-                'name' => '',
-                'county_id' => ''
+                'name' => 'Csengőd',
+                'county_id' => 1
             ],
             [
-                'name' => '',
-                'county_id' => ''
-            ],*/
+                'name' => 'Csénye',
+                'county_id' => 17
+            ],
+            [
+                'name' => 'Csenyéte',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Csép',
+                'county_id' => 11
+            ],
+            [
+                'name' => 'Csépa',
+                'county_id' => 10
+            ],
+            [
+                'name' => 'Csepreg',
+                'county_id' => 17
+            ],
+            [
+                'name' => 'Csér',
+                'county_id' => 7
+            ],
+            [
+                'name' => 'Cserdi',
+                'county_id' => 2
+            ],
+            [
+                'name' => 'Cserénfa',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Cserépfalu',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Cserépváralja',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Cserháthaláp',
+                'county_id' => 12
+            ],
+            [
+                'name' => 'Cserhátsurány',
+                'county_id' => 12
+            ],
+            [
+                'name' => 'Cserhátszentiván',
+                'county_id' => 12
+            ],
+            [
+                'name' => 'Cserkeszőlő',
+                'county_id' => 10
+            ],
+            [
+                'name' => 'Cserkút',
+                'county_id' => 2
+            ],
+            [
+                'name' => 'Csernely',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Cserszegtomaj',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csertalakos',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csertő',
+                'county_id' => 2
+            ],
+            [
+                'name' => 'Csesznek',
+                'county_id' => 18
+            ],
+            [
+                'name' => 'Cseszreg',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csesztve',
+                'county_id' => 12
+            ],
+            [
+                'name' => 'Csetény',
+                'county_id' => 18
+            ],
+            [
+                'name' => 'Csévharaszt',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csibrák',
+                'county_id' => 16
+            ],
+            [
+                'name' => 'Csikéria',
+                'county_id' => 1
+            ],
+            [
+                'name' => 'Csiklóstöttös',
+                'county_id' => 16
+            ],
+            [
+                'name' => 'Csikvánd',
+                'county_id' => 7
+            ],
+            [
+                'name' => 'Csincse',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Csipkerek',
+                'county_id' => 17
+            ],
+            [
+                'name' => 'Csitár',
+                'county_id' => 12
+            ],
+            [
+                'name' => 'Csobád',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Csobaj',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Csobánka',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csókakő',
+                'county_id' => 6
+            ],
+            [
+                'name' => 'Csokoyavisonta',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csokvaomány',
+                'county_id' => 4
+            ],
+            [
+                'name' => 'Csolnok',
+                'county_id' => 11
+            ],
+            [
+                'name' => 'Csólyospálos',
+                'county_id' => 1
+            ],
+            [
+                'name' => 'Csoma',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csomád',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csombrád',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csongrád',
+                'county_id' => 5
+            ],
+            [
+                'name' => 'Csonkahegyhát',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csonkamindszent',
+                'county_id' => 2
+            ],
+            [
+                'name' => 'Csopak',
+                'county_id' => 18
+            ],
+            [
+                'name' => 'Csór',
+                'county_id' => 6
+            ],
+            [
+                'name' => 'Csorna',
+                'county_id' => 7
+            ],
+            [
+                'name' => 'Csorvás',
+                'county_id' => 3
+            ],
+            [
+                'name' => 'Csót',
+                'county_id' => 18
+            ],
+            [
+                'name' => 'Csöde',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csögle',
+                'county_id' => 18
+            ],
+            [
+                'name' => 'Csökmő',
+                'county_id' => 8
+            ],
+            [
+                'name' => 'Csököly',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csörmend',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csömödér',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csömör',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csönge',
+                'county_id' => 17
+            ],
+            [
+                'name' => 'Csörnyegöld',
+                'county_id' => 19
+            ],
+            [
+                'name' => 'Csörög',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csörötnek',
+                'county_id' => 17
+            ],
+            [
+                'name' => 'Csősz',
+                'county_id' => 6
+            ],
+            [
+                'name' => 'Csővár',
+                'county_id' => 13
+            ],
+            [
+                'name' => 'Csurgó',
+                'county_id' => 14
+            ],
+            [
+                'name' => 'Csurgónagymarton',
+                'county_id' => 14
+            ],
         ]);
     }
 }
