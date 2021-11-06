@@ -37,38 +37,75 @@ Route::get('/shelters', function () {
 })->name('shelters');
 
 Auth::routes([
-    'verify'=>true,
-    'reset'=>false,
-    'register'=>false,
+    'verify' => true,
+    'reset' => false,
+    'register' => false,
 ]);
 
-Route::get('password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])
     ->name('password.request');
 
-Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])
     ->name('password.reset');
 
-Route::post('password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])
     ->name('password.email');
 
-Route::post('password/reset', [ResetPasswordController::class,'reset'])
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
 
 
-Route::get('/register',[RegisterController::class,'showRegistrationForm'])
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])
     ->middleware(HasInvitation::class)
     ->name('registerShow');
 
-Route::post('/register',[RegisterController::class,'create'])
+Route::post('/register', [RegisterController::class, 'create'])
     ->name('registerCreate');
 
 
-Route::get('/super_admin_dashboard', [App\Http\Controllers\HomeController::class, 'index'])
-    ->middleware(['auth','verified'])
-    ->name('super_admin_dashboard');
+Route::prefix('/super_admin_dashboard')
+    ->middleware(['auth', 'verified'])
+    ->group(function () {
+    Route::get('/', function (){
+        return view('super_admin_views.invitations');
+    })->name('super_admin_dashboard');
 
-Route::get('/super_admin_dashboard/invitation', function () {
-    return view('super_admin_views.invitations');
-})
-    ->middleware(['auth','verified'])
-    ->name('invitations');
+    Route::get('/invitation', function () {
+        return view('super_admin_views.invitations');
+    })->name('invitations');
+
+    Route::get('/shelters', function () {
+        return view('super_admin_views.shelters');
+    })->name('shelters');
+
+    Route::get('/animals', function () {
+        return view('super_admin_views.animals');
+    })->name('animals');
+
+    Route::prefix('/general')->group(function () {
+
+        Route::get('/categories', function () {
+            return view('super_admin_views.general.categories');
+        })->name('general.categories');
+
+        Route::get('/county', function () {
+            return view('super_admin_views.general.counties');
+        })->name('general.counties');
+
+        Route::get('/settlement', function () {
+            return view('super_admin_views.general.settlement');
+        })->name('general.settlement');
+
+        Route::get('/size', function () {
+            return view('super_admin_views.general.size');
+        })->name('general.size');
+
+        Route::get('/species', function () {
+            return view('super_admin_views.general.species');
+        })->name('general.species');
+
+        Route::get('/colors', function () {
+            return view('super_admin_views.general.colors');
+        })->name('general.colors');
+    });
+});

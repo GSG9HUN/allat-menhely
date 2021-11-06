@@ -9,14 +9,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return Renderable
-     */
-    public function index(): Renderable
+    public function index()
     {
-        return view('super_admin_views.invitations');
+
     }
 
     public function create()

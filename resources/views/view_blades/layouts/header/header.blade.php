@@ -5,6 +5,5 @@
         <li><a href="{{route('about')}}">Rólunk</a></li>
         <li><a href="#elements">Támogatóink</a></li>
         <li><a href="{{route('login')}}">Belépés</a></li>
-
     </ul>
 </div>

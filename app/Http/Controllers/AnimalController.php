@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
-    public function index()
+    public function index(): JsonResponse
     {
+        $result = Category::query()->get();
 
+        return response()->json(['category'=>$result]);
     }
 
     public function create()

@@ -13,15 +13,21 @@ class Settlement extends Model
     protected $table = 'settlement';
 
     protected $fillable = [
-        'name'
+        'name',
+        'county_id'
     ];
 
     protected $primaryKey = 'id';
 
     public $timestamps = null;
 
-    private function shelter(): BelongsTo
+    function shelter(): BelongsTo
     {
         return $this->belongsTo('App\Models\Shelter', 'settlement_id', 'id');
+    }
+
+    function county(): BelongsTo
+    {
+        return $this->belongsTo('App\Models\County','county_id','id');
     }
 }

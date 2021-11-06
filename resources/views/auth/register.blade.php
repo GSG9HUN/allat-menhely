@@ -1,4 +1,4 @@
-@extends('layouts.basic_layout')
+@extends('view_blades.layouts.basic_layout')
 
 @section('content')
     <div class="container">

@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Size;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
 {
-    public function index()
+    public function index(): JsonResponse
     {
+        $result = Size::query()->get();
 
+        return response()->json(['sizes'=>$result]);
     }
 
     public function create()

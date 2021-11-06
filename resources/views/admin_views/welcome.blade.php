@@ -1,4 +1,4 @@
-@extends('layouts.admin_layout')
+@extends('view_blades.layouts.admin_layout')
 
 @section('content')
 <div class="container">

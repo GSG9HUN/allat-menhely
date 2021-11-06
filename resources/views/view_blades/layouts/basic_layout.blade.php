@@ -17,13 +17,13 @@
 <body class="is-preload">
 <div id="wrapper">
     <header class="header">
-        @include('layouts.header.header')
+        @include('view_blades.layouts.header.header')
     </header>
     <div class="content">
         @yield('content')
     </div>
     <div class="footer">
-        @include('layouts.footer.footer')
+        @include('view_blades.layouts.footer.footer')
     </div>
 </div>
 

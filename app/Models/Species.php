@@ -13,16 +13,18 @@ class Species extends Model
     protected $table = 'species';
 
     protected $fillable = [
-        'name'
+        'name',
+        'category_id',
+        'hair_type'
     ];
 
     protected $primaryKey = 'id';
 
     public $timestamps = null;
 
-    private function category(): BelongsTo
+    function category(): BelongsTo
     {
-        return $this->belongsTo('App\Models\Category', 'species_id', 'id');
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
     }
 
 

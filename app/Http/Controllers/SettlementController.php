@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Settlement;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SettlementController extends Controller
 {
-    public function index()
+    public function index(): JsonResponse
     {
+        $result = Settlement::query()->with('county')->get();
 
+        return response()->json(['settlement'=>$result]);
     }
 
     public function create()
