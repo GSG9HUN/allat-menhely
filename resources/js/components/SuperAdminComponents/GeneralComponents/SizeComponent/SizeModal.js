@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import EditCountiesModal from "./EditCountiesModal";
-import AddCounties from "./AddCounties";
+import AddSize from "./AddSize";
+import EditSize from "./EditSize";
 
 
 const customStyles = {
@@ -17,7 +17,7 @@ const customStyles = {
     },
 };
 
-export default class CountiesModal extends React.Component{
+export default class SizeModal extends React.Component{
     constructor(props) {
         super(props);
         this.state={
@@ -41,15 +41,15 @@ export default class CountiesModal extends React.Component{
 
     createEditForm() {
         return [
-            <EditCountiesModal closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Megye módosítása</button>
+            <EditSize closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
+            <button className={'btn btn-primary'} onClick={this.openModal}>Méret módosítása</button>
         ]
     }
 
     createAddForm() {
         return [
-            <AddCounties closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új megye hozzáadás</button>
+            <AddSize closeModal={this.closeModal}/>,
+            <button className={'btn btn-primary'} onClick={this.openModal}>Új méret hozzáadás</button>
         ]
     }
 
@@ -60,7 +60,6 @@ export default class CountiesModal extends React.Component{
         }else{
             [form,button] = this.createAddForm()
         }
-
         return (
             <div>
                 {button}
@@ -68,7 +67,7 @@ export default class CountiesModal extends React.Component{
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
                     style={customStyles}
-                    contentLabel="Megye"
+                    contentLabel="Méret"
                     ariaHideApp={false}
                 >
                     <h2>Hello</h2>

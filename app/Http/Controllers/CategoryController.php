@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CategoryController extends Controller
 {
@@ -12,36 +13,49 @@ class CategoryController extends Controller
     {
         $result = Category::query()->get();
 
-        return response()->json(['categories'=>$result]);
+        return response()->json(['categories' => $result]);
     }
 
-    public function create()
+
+    /**
+     * @throws ValidationException
+     */
+    public function store(Request $request): JsonResponse
     {
+        $this->validate($request,[
+            'categoryName'=>'required',
+        ]);
 
-    }
+        $newCategory = new Category();
 
-    public function store(Request $request)
-    {
+        $newCategory->name=$request['categoryName'];
+        $newCategory->save();
 
-    }
-
-    public function show($id)
-    {
-
-    }
-
-    public function edit($id)
-    {
-
-    }
-
-    public function update(Request $request, $id)
-    {
+        return response()->json(['Success']);
 
     }
 
-    public function destroy($id)
-    {
 
+    /**
+     * @throws ValidationException
+     */
+    public function update(Request $request, $id): JsonResponse
+    {
+        $this->validate($request,[
+            'categoryName'=>'required',
+        ]);
+
+        Category::query()->where('id',$id)->update([
+            'name'=>$request['categoryName']
+        ]);
+
+        return response()->json(['Success']);
+    }
+
+    public function destroy($id): JsonResponse
+    {
+        Category::query()->where('id',$id)->delete();
+
+        return response()->json(['Success']);
     }
 }

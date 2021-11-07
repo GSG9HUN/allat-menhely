@@ -2,12 +2,12 @@ import React from "react";
 import {ErrorWriter} from "../../../ErrorWriter";
 
 
-export default class EditCountiesModal extends React.Component {
+export default class EditSize extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            county: this.props.toEdit.name,
+            size: this.props.toEdit.name,
             errors:''
         }
 
@@ -23,8 +23,8 @@ export default class EditCountiesModal extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        axios.put(`/api/counties/${this.props.toEdit.id}`,{
-            county:this.state.county
+        axios.put(`/api/size/${this.props.toEdit.id}`,{
+            size:this.state.size
         }).then(()=>{
             this.closeBut.click()
         }).catch((errors)=>{
@@ -42,9 +42,9 @@ export default class EditCountiesModal extends React.Component {
                     <ErrorWriter errors={this.state.errors}/>
                 }
                 <div className={'form-item'}>
-                    <label>Megye</label>
-                    <input type={'text'} onChange={this.handleChange} name={'county'}
-                           value={this.state.county}/>
+                    <label>Méret</label>
+                    <input type={'text'} onChange={this.handleChange} name={'size'}
+                           value={this.state.size}/>
                 </div>
 
                 <div className={'form-buttons'}>

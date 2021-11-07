@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\County;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CountyController extends Controller
 {
@@ -22,29 +23,45 @@ class CountyController extends Controller
 
     }
 
-    public function store(Request $request)
+    /**
+     * @throws ValidationException
+     */
+    public function store(Request $request): JsonResponse
     {
+        $this->validate($request,[
+            'county'=>'required'
+        ]);
 
+        $newCounty = new County();
+
+        $newCounty->name = $request['county'];
+        $newCounty->save();
+
+        return response()->json(['Success']);
     }
 
-    public function show(County $county)
+    /**
+     * @throws ValidationException
+     */
+    public function update(Request $request, int $id): JsonResponse
     {
 
+        $this->validate($request,[
+            'county'=>'required'
+        ]);
+
+        County::query()->where('id',$id)->update([
+            'name'=>$request['county']
+        ]);
+
+        return response()->json(['Success']);
     }
 
-    public function edit(County $county)
+
+    public function destroy($id): JsonResponse
     {
+        County::query()->where('id',$id)->delete();
 
-    }
-
-    public function update(Request $request, County $county)
-    {
-
-    }
-
-
-    public function destroy(County $county)
-    {
-
+        return response()->json(['Success']);
     }
 }

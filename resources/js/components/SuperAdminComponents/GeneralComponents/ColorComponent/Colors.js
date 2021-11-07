@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CategoryModal from "../CategoryComponent/CategoryModal";
+import ColorsModal from "./ColorsModal";
 
 
 export default class Colors extends React.Component {
@@ -12,6 +14,7 @@ export default class Colors extends React.Component {
         this.getColors = this.getColors.bind(this)
         this.renderColors = this.renderColors.bind(this)
         this.reRenderColors = this.reRenderColors.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     getColors() {
@@ -28,6 +31,19 @@ export default class Colors extends React.Component {
                 <tr key={index}>
                     <td>{color.id}</td>
                     <td>{color.name}</td>
+                    <td>
+                        <div className={'button-img'}>
+                            <div className={'edit'}>
+                                <ColorsModal reRenderColors={this.reRenderColors} toEdit={color}/>
+                            </div>
+                            <div className={'delete'}>
+                                <button onClick={() => {
+                                    this.handleDelete(color.id)
+                                }}>Törlés
+                                </button>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             )
         })
@@ -41,6 +57,13 @@ export default class Colors extends React.Component {
         this.getColors()
     }
 
+    handleDelete(id){
+        axios.delete(`/api/colors/${id}`).then(()=>{
+            this.reRenderColors()
+        })
+    }
+
+
     render() {
         return(
             <>
@@ -49,12 +72,14 @@ export default class Colors extends React.Component {
                     <tr>
                         <th>ID</th>
                         <th>Szín</th>
+                        <th>Műveletek</th>
                     </tr>
                     </thead>
                     <tbody>
                     {this.renderColors()}
                     </tbody>
                 </table>
+                <ColorsModal reRenderColors={this.reRenderColors}/>
             </>
         )
     }

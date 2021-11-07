@@ -2,12 +2,12 @@ import React from "react";
 import {ErrorWriter} from "../../../ErrorWriter";
 
 
-export default class EditCountiesModal extends React.Component {
+export default class EditCategory extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            county: this.props.toEdit.name,
+            categoryName: this.props.toEdit.name,
             errors:''
         }
 
@@ -23,8 +23,8 @@ export default class EditCountiesModal extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        axios.put(`/api/counties/${this.props.toEdit.id}`,{
-            county:this.state.county
+        axios.put(`/api/category/${this.props.toEdit.id}`,{
+            categoryName:this.state.categoryName
         }).then(()=>{
             this.closeBut.click()
         }).catch((errors)=>{
@@ -35,6 +35,7 @@ export default class EditCountiesModal extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <form onSubmit={this.handleSubmit}>
                 {
@@ -42,9 +43,9 @@ export default class EditCountiesModal extends React.Component {
                     <ErrorWriter errors={this.state.errors}/>
                 }
                 <div className={'form-item'}>
-                    <label>Megye</label>
-                    <input type={'text'} onChange={this.handleChange} name={'county'}
-                           value={this.state.county}/>
+                    <label>Állatfaj megnevezése</label>
+                    <input type={'text'} onChange={this.handleChange} name={'categoryName'}
+                           value={this.state.categoryName}/>
                 </div>
 
                 <div className={'form-buttons'}>

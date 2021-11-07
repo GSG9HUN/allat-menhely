@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SizeModal from "./SizeModal";
 
 
 export default class Size extends React.Component {
@@ -12,6 +13,7 @@ export default class Size extends React.Component {
         this.getSizes = this.getSizes.bind(this)
         this.renderSizes = this.renderSizes.bind(this)
         this.reRenderSizes = this.reRenderSizes.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     getSizes() {
@@ -28,6 +30,19 @@ export default class Size extends React.Component {
                 <tr key={index}>
                     <td>{size.id}</td>
                     <td>{size.name}</td>
+                    <td>
+                        <div className={'button-img'}>
+                            <div className={'edit'}>
+                                <SizeModal reRenderCounties={this.reRenderSizes} toEdit={size}/>
+                            </div>
+                            <div className={'delete'}>
+                                <button onClick={() => {
+                                    this.handleDelete(size.id)
+                                }}>Törlés
+                                </button>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             )
         })
@@ -41,6 +56,12 @@ export default class Size extends React.Component {
         this.getSizes()
     }
 
+    handleDelete(id){
+        axios.delete(`/api/size/${id}`).then(()=>{
+            this.reRenderSizes()
+        })
+    }
+
     render() {
         return(
             <>
@@ -49,12 +70,14 @@ export default class Size extends React.Component {
                     <tr>
                         <th>ID</th>
                         <th>Méret</th>
+                        <th>Műveletek</th>
                     </tr>
                     </thead>
                     <tbody>
                     {this.renderSizes()}
                     </tbody>
                 </table>
+                <SizeModal reRenderSize={this.reRenderSize}/>
             </>
         )
     }

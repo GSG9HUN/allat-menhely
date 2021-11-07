@@ -15,33 +15,45 @@ class SizeController extends Controller
         return response()->json(['sizes'=>$result]);
     }
 
-    public function create()
-    {
 
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function store(Request $request): JsonResponse
+    {
+        $this->validate($request,[
+            'size'=>'required'
+        ]);
+
+        $newSize = new Size();
+
+        $newSize->name = $request['size'];
+        $newSize->save();
+
+        return response()->json(['Success']);
     }
 
-    public function store(Request $request)
-    {
 
+    /**
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function update(Request $request, $id): JsonResponse
+    {
+        $this->validate($request,[
+            'size'=>'required'
+        ]);
+
+        Size::query()->where('id',$id)->update([
+            'size'=>$request['size']
+        ]);
+
+        return response()->json(['Success']);
     }
 
-    public function show($id)
+    public function destroy($id): JsonResponse
     {
+        Size::query()->where('id',$id)->delete();
 
-    }
-
-    public function edit($id)
-    {
-
-    }
-
-    public function update(Request $request, $id)
-    {
-
-    }
-
-    public function destroy($id)
-    {
-
+        return response()->json(['Success']);
     }
 }

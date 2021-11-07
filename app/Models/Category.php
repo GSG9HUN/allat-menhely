@@ -24,4 +24,5 @@ class Category extends Model
     {
         return $this->hasMany('App\Models\Species', 'id', 'species_id');
     }
+
 }

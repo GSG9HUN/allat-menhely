@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CountiesModal from "./CountiesModal";
 
 export default class Counties extends React.Component {
     constructor(props) {
@@ -10,29 +11,43 @@ export default class Counties extends React.Component {
         this.getCounties = this.getCounties.bind(this)
         this.renderCounties = this.renderCounties.bind(this)
         this.reRenderCounties = this.reRenderCounties.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getCounties(){
-        axios.get('/api/counties').then((response)=>{
+    getCounties() {
+        axios.get('/api/counties').then((response) => {
             console.log(response)
             this.setState({
-                counties:response.data.counties
+                counties: response.data.counties
             })
         })
     }
 
-    renderCounties(){
-        return this.state.counties.map((county,index)=>{
-            return(
+    renderCounties() {
+        return this.state.counties.map((county, index) => {
+            return (
                 <tr key={index}>
                     <td>{county.id}</td>
                     <td>{county.name}</td>
+                    <td>
+                        <div className={'button-img'}>
+                            <div className={'edit'}>
+                                <CountiesModal reRenderCounties={this.reRenderCounties} toEdit={county}/>
+                            </div>
+                            <div className={'delete'}>
+                                <button onClick={() => {
+                                    this.handleDelete(county.id)
+                                }}>Törlés
+                                </button>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             )
         })
     }
 
-    reRenderCounties(){
+    reRenderCounties() {
         this.getCounties()
     }
 
@@ -41,6 +56,11 @@ export default class Counties extends React.Component {
         this.getCounties()
     }
 
+    handleDelete(id){
+        axios.delete(`/api/counties/${id}`).then(()=>{
+            this.reRenderCounties()
+        })
+    }
 
     render() {
         return (
@@ -50,12 +70,14 @@ export default class Counties extends React.Component {
                     <tr>
                         <th>ID</th>
                         <th>Megye név</th>
+                        <th>Műveletek</th>
                     </tr>
                     </thead>
                     <tbody>
                     {this.renderCounties()}
                     </tbody>
                 </table>
+                <CountiesModal reRenderCounties={this.reRenderCounties}/>
             </>
         )
     }

@@ -25,6 +25,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "react-modal": "^3.14.3"
+        "react-modal": "^3.14.3",
+        "react-select-search": "^3.0.8"
     }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import EditCountiesModal from "./EditCountiesModal";
-import AddCounties from "./AddCounties";
-
+import EditColors from "./EditColors";
+import AddColors from "./AddColors";
 
 const customStyles = {
     content: {
@@ -12,16 +11,16 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        backgroundColor:'gray',
-        color:'black'
+        backgroundColor: 'gray',
+        color: 'black'
     },
 };
 
-export default class CountiesModal extends React.Component{
+export default class ColorsModal extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            open :false
+        this.state = {
+            open: false
         }
 
         this.openModal = this.openModal.bind(this)
@@ -30,26 +29,27 @@ export default class CountiesModal extends React.Component{
         this.createEditForm = this.createEditForm.bind(this)
 
     }
-    openModal(){
-        this.setState({open:true});
+
+    openModal() {
+        this.setState({open: true});
     }
 
-    closeModal(){
-        this.setState({open:false});
-        this.props.reRenderCounties()
+    closeModal() {
+        this.setState({open: false});
+        this.props.reRenderColors()
     }
 
     createEditForm() {
         return [
-            <EditCountiesModal closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Megye módosítása</button>
+            <EditColors closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
+            <button className={'btn btn-primary'} onClick={this.openModal}>Szín módosítása</button>
         ]
     }
 
     createAddForm() {
         return [
-            <AddCounties closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új megye hozzáadás</button>
+            <AddColors closeModal={this.closeModal}/>,
+            <button className={'btn btn-primary'} onClick={this.openModal}>Új szín hozzáadás</button>
         ]
     }
 
@@ -68,7 +68,7 @@ export default class CountiesModal extends React.Component{
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
                     style={customStyles}
-                    contentLabel="Megye"
+                    contentLabel="Állat színek"
                     ariaHideApp={false}
                 >
                     <h2>Hello</h2>

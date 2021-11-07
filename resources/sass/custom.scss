@@ -4,4 +4,21 @@
 
 .form-item {
     display: flex;
+    flex-direction: column;
+    margin: 5px;
 }
+
+
+.form-buttons{
+    float: right;
+}
+
+.validation-error{
+    margin-bottom: 5%;
+    font-size: medium;
+
+    p{
+        color: #761b18;
+    }
+}
+

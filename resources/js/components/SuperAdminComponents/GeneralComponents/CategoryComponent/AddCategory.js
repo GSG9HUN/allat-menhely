@@ -2,39 +2,37 @@ import React from "react";
 import {ErrorWriter} from "../../../ErrorWriter";
 
 
-export default class EditCountiesModal extends React.Component {
+export default class AddCategory extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            county: this.props.toEdit.name,
-            errors:''
+            categoryName: '',
+            errors: ''
         }
-
-        this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleChange(e){
+    handleChange(e) {
         this.setState({
-            [e.target.name]:e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault()
-        axios.put(`/api/counties/${this.props.toEdit.id}`,{
-            county:this.state.county
-        }).then(()=>{
+        axios.post('/api/category', {
+            categoryName: this.state.categoryName
+        }).then(() => {
             this.closeBut.click()
-        }).catch((errors)=>{
-            this.setState({
-                errors:errors.response.data.errors
-            })
+        }).catch((err) => {
+            this.setState({errors: err.response.data.errors})
         })
     }
 
     render() {
+        console.log(this.state)
         return (
             <form onSubmit={this.handleSubmit}>
                 {
@@ -42,9 +40,9 @@ export default class EditCountiesModal extends React.Component {
                     <ErrorWriter errors={this.state.errors}/>
                 }
                 <div className={'form-item'}>
-                    <label>Megye</label>
-                    <input type={'text'} onChange={this.handleChange} name={'county'}
-                           value={this.state.county}/>
+                    <label>Állatfaj megnevezése</label>
+                    <input type={'text'} onChange={this.handleChange} name={'categoryName'}
+                           value={this.state.categoryName}/>
                 </div>
 
                 <div className={'form-buttons'}>
@@ -55,5 +53,4 @@ export default class EditCountiesModal extends React.Component {
             </form>
         )
     }
-
 }
