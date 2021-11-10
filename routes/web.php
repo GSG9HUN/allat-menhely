@@ -20,21 +20,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('view_blades.welcome');
-})->name('welcome');
+})->name('guest.welcome');
 
 
 Route::get('/about_us', function () {
     return view('view_blades.about_us');
-})->name('about');
+})->name('guest.about');
 
 
 Route::get('/animals', function () {
     return view('view_blades.animals');
-})->name('animals');
+})->name('guest.animals');
 
 Route::get('/shelters', function () {
     return view('view_blades.shelters');
-})->name('shelters');
+})->name('guest.shelters');
 
 Auth::routes([
     'verify' => true,

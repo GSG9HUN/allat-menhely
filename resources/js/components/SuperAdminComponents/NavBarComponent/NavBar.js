@@ -12,7 +12,7 @@ const NavBar = () => {
             {navData.map((data, index) => {
                 if (data.subNav) {
                     return (
-                        <React.Fragment>
+                        <React.Fragment key={index}>
                             <li style={{display: 'flex'}} key={index}>
                                 <a href={data.path}>
                                     <img style={{width: 20, height: 20}} src={data.src} alt={data.alt}/>
@@ -21,9 +21,9 @@ const NavBar = () => {
                             </li>
                             <ul className="subNav">
                                 {
-                                    data.subNav.map((sub, index) => {
+                                    data.subNav.map((sub, index2) => {
                                         return (
-                                            <li style={{display: 'flex'}} key={index}>
+                                            <li style={{display: 'flex'}} key={index2+''+index}>
                                                 <a href={sub.path}>
                                                     <img style={{width: 20, height: 20}} src={sub.src} alt={sub.alt}/>
                                                     <span style={{marginLeft: 10}}>{sub.title}</span>

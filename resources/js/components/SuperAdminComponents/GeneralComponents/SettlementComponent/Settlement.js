@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SettlementModal from "./SettlementModal";
 
 export default class Settlement extends React.Component{
     constructor(props) {
@@ -11,6 +12,7 @@ export default class Settlement extends React.Component{
         this.getSettlement = this.getSettlement.bind(this)
         this.renderSettlement = this.renderSettlement.bind(this)
         this.reRenderSettlement = this.reRenderSettlement.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     getSettlement(){
@@ -28,8 +30,28 @@ export default class Settlement extends React.Component{
                     <td>{settlement.id}</td>
                     <td>{settlement.name}</td>
                     <td>{settlement.county.name}</td>
+                    <td>
+                        <div className={'button-img'}>
+                            <div className={'edit'}>
+                                <SettlementModal reRenderSettlement={this.reRenderSettlement} toEdit={settlement}/>
+                            </div>
+                            <div className={'delete'}>
+                                <button onClick={() => {
+                                    this.handleDelete(settlement.id)
+                                }}>Törlés
+                                </button>
+                            </div>
+                        </div>
+
+                    </td>
                 </tr>
             )
+        })
+    }
+
+    handleDelete(id){
+        axios.delete(`/api/settlement/${id}`).then(()=>{
+            this.getSettlement()
         })
     }
 
@@ -50,12 +72,14 @@ export default class Settlement extends React.Component{
                         <th>ID</th>
                         <th>Település neve</th>
                         <th>Megye neve</th>
+                        <th>Műveletek</th>
                     </tr>
                     </thead>
                     <tbody>
                     {this.renderSettlement()}
                     </tbody>
                 </table>
+                <SettlementModal reRenderSettlement={this.reRenderSettlement}/>
             </>
         )
     }

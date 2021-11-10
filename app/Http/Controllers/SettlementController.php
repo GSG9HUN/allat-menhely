@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Settlement;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class SettlementController extends Controller
 {
@@ -20,28 +21,48 @@ class SettlementController extends Controller
 
     }
 
-    public function store(Request $request)
+    /**
+     * @throws ValidationException
+     */
+    public function store(Request $request): JsonResponse
     {
+        $this->validate($request,[
+            'countyId'=>'required',
+            'settlementName'=>'required'
+        ]);
 
+        $newSettlement = new Settlement();
+
+        $newSettlement->name = $request['settlementName'];
+        $newSettlement->county_id = $request['countyId'];
+
+        $newSettlement->save();
+
+        return response()->json(['Success']);
     }
 
-    public function show($id)
+
+    /**
+     * @throws ValidationException
+     */
+    public function update(Request $request, $id): JsonResponse
     {
 
-    }
+        $this->validate($request,[
+            'countyId'=>'required',
+            'settlementName'=>'required'
+        ]);
 
-    public function edit($id)
-    {
+        Settlement::query()->where('id',$id)->update([
+            'name'=>$request['settlementName'],
+            'county_id'=>$request['countyId'],
+        ]);
 
-    }
-
-    public function update(Request $request, $id)
-    {
-
+        return response()->json(['Success']);
     }
 
     public function destroy($id)
     {
-
+        Settlement::query()->where('id',$id)->delete();
     }
 }

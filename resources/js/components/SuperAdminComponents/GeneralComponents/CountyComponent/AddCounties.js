@@ -23,7 +23,7 @@ export default class AddCounties extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         axios.post('/api/counties', {
-            color: this.state.color
+            county: this.state.county
         }).then(() => {
             this.closeBut.click()
         }).catch((err) => {

@@ -16,7 +16,6 @@ export default class Counties extends React.Component {
 
     getCounties() {
         axios.get('/api/counties').then((response) => {
-            console.log(response)
             this.setState({
                 counties: response.data.counties
             })

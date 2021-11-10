@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CategoryModal from "../CategoryComponent/CategoryModal";
 import ColorsModal from "./ColorsModal";
 
 

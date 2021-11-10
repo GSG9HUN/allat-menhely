@@ -1,6 +1,6 @@
 @extends('view_blades.layouts.basic_layout')
 @section('content')
-    <div id="{{\Request::route()->getName()}}">
+    <div id="{{Request::route()->getName()}}">
         <article id="intro">
             <h2 class="major">Allatok</h2>
             <span class="image main"><img src="images/pic01.jpg" alt=""/></span>
