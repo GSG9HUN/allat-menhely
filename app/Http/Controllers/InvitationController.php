@@ -7,6 +7,7 @@ use App\Models\Invitation;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\ValidationException;
 
 class InvitationController extends Controller
 {
@@ -17,9 +18,9 @@ class InvitationController extends Controller
     }
 
     /**
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
-    function store(Request $request)
+    function store(Request $request): JsonResponse
     {
 
         $this->validate($request,

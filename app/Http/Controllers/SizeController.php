@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Size;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class SizeController extends Controller
 {
@@ -17,7 +18,7 @@ class SizeController extends Controller
 
 
     /**
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function store(Request $request): JsonResponse
     {
@@ -35,7 +36,7 @@ class SizeController extends Controller
 
 
     /**
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function update(Request $request, $id): JsonResponse
     {

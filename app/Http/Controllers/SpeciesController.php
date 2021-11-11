@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Species;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class SpeciesController extends Controller
 {
@@ -16,33 +17,52 @@ class SpeciesController extends Controller
         return response()->json(['species'=>$result]);
     }
 
-    public function create()
+
+    /**
+     * @throws ValidationException
+     */
+    public function store(Request $request): JsonResponse
     {
 
+        $this->validate($request,[
+            'speciesName'=>'required',
+            'category_id'=>'required'
+        ]);
+
+        $newSpecie = new Species();
+        $newSpecie->name = $request['speciesName'];
+        $newSpecie->category_id = $request['category_id'];
+        $newSpecie->hair_type = $request['hair_type']??null;
+
+        $newSpecie->save();
+
+        return response()->json(['Success']);
     }
 
-    public function store(Request $request)
-    {
 
+    /**
+     * @throws ValidationException
+     */
+    public function update(Request $request, $id): JsonResponse
+    {
+        $this->validate($request,[
+            'speciesName'=>'required',
+            'category_id'=>'required'
+        ]);
+
+        Species::query()->where('id',$id)->update([
+            'name'=>$request['speciesName'],
+            'category_id'=>$request['category_id'],
+            'hair_type'=>$request['hair_type'],
+        ]);
+
+        return response()->json(['Success']);
     }
 
-    public function show($id)
+    public function destroy($id): JsonResponse
     {
+        Species::query()->where('id',$id)->delete();
 
-    }
-
-    public function edit($id)
-    {
-
-    }
-
-    public function update(Request $request, $id)
-    {
-
-    }
-
-    public function destroy($id)
-    {
-
+        return response()->json(['Success']);
     }
 }

@@ -37,5 +37,6 @@ Route::middleware('auth')->group(function(){
 
 
     Route::get('/SelectSearch/county',[SelectSearchController::class,'getCountyOptions']);
+    Route::get('/SelectSearch/category',[SelectSearchController::class,'getAnimalCategoryOptions']);
 });
 

@@ -22,7 +22,7 @@ export default class AddColors extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        axios.post('/api/color', {
+        axios.post('/api/colors', {
             color: this.state.color
         }).then(() => {
             this.closeBut.click()
