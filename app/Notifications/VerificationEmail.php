@@ -30,7 +30,7 @@ class VerificationEmail extends Notification
      * @param mixed $notifiable
      * @return array
      */
-    public function via($notifiable)
+    public function via(mixed $notifiable): array
     {
         return ['mail'];
     }
@@ -39,9 +39,9 @@ class VerificationEmail extends Notification
      * Get the mail representation of the notification.
      *
      * @param mixed $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @return MailMessage
      */
-    public function toMail($notifiable): MailMessage
+    public function toMail(mixed $notifiable): MailMessage
     {
         return (new MailMessage)
             ->subject('Regisztráció megerősítés!')
@@ -55,7 +55,7 @@ class VerificationEmail extends Notification
      * @param mixed $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toArray(mixed $notifiable): array
     {
         return [
             //

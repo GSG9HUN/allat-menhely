@@ -42,7 +42,7 @@ export default class SizeModal extends React.Component{
     createEditForm() {
         return [
             <EditSize closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Méret módosítása</button>
+            <button onClick={this.openModal}>Méret módosítása</button>
         ]
     }
 

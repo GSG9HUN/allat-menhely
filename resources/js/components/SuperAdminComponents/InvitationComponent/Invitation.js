@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import InvitationModal from "./InvitationModal";
+import Pagination from "react-js-pagination";
 
 
 export default class Invitation extends React.Component {
@@ -8,21 +9,25 @@ export default class Invitation extends React.Component {
         super(props);
         this.state = {
             invitations: [],
-            token : document.querySelector('meta[name="csrf-token"]')
+            currentPage:'',
+            total:'',
+            perPage:'',
         }
 
         this.renderInvitations = this.renderInvitations.bind(this)
         this.reRenderInvitations = this.reRenderInvitations.bind(this)
         this.getInvitations = this.getInvitations.bind(this)
-
     }
 
 
-    getInvitations() {
-        axios.get('/api/invitations'
+    getInvitations(pageNumber = 1) {
+        axios.get(`/api/invitations?page=${pageNumber}`
         ).then((response) => {
             this.setState({
-                invitations:[...response.data.invitations]
+                invitations:[...response.data.invitations.data],
+                currentPage: response.data.invitations.current_page,
+                perPage: response.data.invitations.perPage,
+                total: response.data.invitations.total
             })
         })
     }
@@ -67,6 +72,16 @@ export default class Invitation extends React.Component {
                 </table>
                 <div className={'row-buttons'}>
                     <InvitationModal reRenderInvitations ={this.reRenderInvitations}/>
+                </div>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getInvitations(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
                 </div>
             </div>
         )

@@ -42,7 +42,7 @@ export default class CategoryModal extends React.Component {
     createEditForm() {
         return [
             <EditCategory closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Faj módosítása</button>
+            <button onClick={this.openModal}>Faj módosítása</button>
         ]
     }
 

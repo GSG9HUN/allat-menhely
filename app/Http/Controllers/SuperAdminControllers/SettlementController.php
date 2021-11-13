@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SuperAdminControllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Settlement;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class SettlementController extends Controller
 {
     public function index(): JsonResponse
     {
-        $result = Settlement::query()->with('county')->get();
+        $result = Settlement::query()->with('county')->paginate(10);
 
         return response()->json(['settlement'=>$result]);
     }

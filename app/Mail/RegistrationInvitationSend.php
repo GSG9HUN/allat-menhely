@@ -11,7 +11,7 @@ class RegistrationInvitationSend extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $invitationToken;
+    private string $invitationToken;
 
     /**
      * Create a new message instance.

@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import CategoryModal from "./CategoryModal";
+import Pagination from "react-js-pagination";
 
 
 export default class Category extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            categories: []
+            categories: [],
+            perPage:'',
+            total:'',
+            currentPage:1
         }
         this.getCategories = this.getCategories.bind(this)
         this.renderCategories = this.renderCategories.bind(this)
@@ -15,10 +19,13 @@ export default class Category extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getCategories() {
-        axios.get('/api/category').then((response) => {
+    getCategories(pageNumber = 1) {
+        axios.get(`/api/category?page=${pageNumber}`).then((response) => {
             this.setState({
-                categories: response.data.categories
+                categories: response.data.categories.data,
+                perPage: response.data.categories.per_page,
+                total:response.data.categories.total,
+                currentPage:response.data.categories.current_page,
             })
         })
     }
@@ -79,6 +86,16 @@ export default class Category extends React.Component {
                     </tbody>
                 </table>
                 <CategoryModal reRenderCategories={this.reRenderCategories}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getCategories(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }

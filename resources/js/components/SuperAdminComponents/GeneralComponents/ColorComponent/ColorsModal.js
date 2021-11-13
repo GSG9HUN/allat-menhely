@@ -42,7 +42,7 @@ export default class ColorsModal extends React.Component {
     createEditForm() {
         return [
             <EditColors closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Szín módosítása</button>
+            <button onClick={this.openModal}>Szín módosítása</button>
         ]
     }
 

@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SuperAdminControllers;
 
-use App\Models\Size;
+use App\Http\Controllers\Controller;
+use App\Models\Color;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class SizeController extends Controller
+class ColorController extends Controller
 {
     public function index(): JsonResponse
     {
-        $result = Size::query()->get();
+        $result = Color::query()->paginate(10);
 
-        return response()->json(['sizes'=>$result]);
+        return response()->json(['colors' => $result]);
     }
 
 
@@ -22,14 +23,14 @@ class SizeController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $this->validate($request,[
-            'size'=>'required'
+        $this->validate($request, [
+            'color' => 'required'
         ]);
 
-        $newSize = new Size();
+        $newColor = new Color();
 
-        $newSize->name = $request['size'];
-        $newSize->save();
+        $newColor->name = $request['color'];
+        $newColor->save();
 
         return response()->json(['Success']);
     }
@@ -40,12 +41,12 @@ class SizeController extends Controller
      */
     public function update(Request $request, $id): JsonResponse
     {
-        $this->validate($request,[
-            'size'=>'required'
+        $this->validate($request, [
+            'color' => 'required'
         ]);
 
-        Size::query()->where('id',$id)->update([
-            'size'=>$request['size']
+        Color::query()->where('id', $id)->update([
+            'name' => $request['color']
         ]);
 
         return response()->json(['Success']);
@@ -53,7 +54,7 @@ class SizeController extends Controller
 
     public function destroy($id): JsonResponse
     {
-        Size::query()->where('id',$id)->delete();
+        Color::query()->where('id', $id)->delete();
 
         return response()->json(['Success']);
     }

@@ -14,7 +14,7 @@ class ResetPasswordEmail extends Notification
 {
     use Queueable;
 
-    private $token;
+    private string $token;
 
     /**
      * Create a new notification instance.
@@ -32,7 +32,7 @@ class ResetPasswordEmail extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function via($notifiable): array
+    public function via(mixed $notifiable): array
     {
         return ['mail'];
     }
@@ -43,7 +43,7 @@ class ResetPasswordEmail extends Notification
      * @param  mixed  $notifiable
      * @return MailMessage
      */
-    public function toMail($notifiable): MailMessage
+    public function toMail(mixed $notifiable): MailMessage
     {
         return (new MailMessage)
             ->subject('Jelszó emlékesztető!')
@@ -56,7 +56,7 @@ class ResetPasswordEmail extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable): array
+    public function toArray(mixed $notifiable): array
     {
         return [
             //

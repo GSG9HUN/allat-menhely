@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SettlementModal from "./SettlementModal";
+import Pagination from "react-js-pagination";
 
 export default class Settlement extends React.Component{
     constructor(props) {
         super(props);
         this.state={
-            settlement : []
+            settlement : [],
+            currentPage: 1,
+            perPage: '',
+            total:'',
         }
 
         this.getSettlement = this.getSettlement.bind(this)
@@ -15,10 +19,14 @@ export default class Settlement extends React.Component{
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getSettlement(){
-        axios.get('/api/settlement').then((response)=>{
+    getSettlement(pageNumber = 1){
+        axios.get(`/api/settlement?page=${pageNumber}`).then((response)=>{
+            console.log(response.data)
             this.setState({
-                settlement :response.data.settlement
+                settlement :response.data.settlement.data,
+                perPage:response.data.settlement.per_page,
+                total:response.data.settlement.total,
+                currentPage:response.data.settlement.current_page,
             })
         })
     }
@@ -80,6 +88,16 @@ export default class Settlement extends React.Component{
                     </tbody>
                 </table>
                 <SettlementModal reRenderSettlement={this.reRenderSettlement}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getSettlement(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }

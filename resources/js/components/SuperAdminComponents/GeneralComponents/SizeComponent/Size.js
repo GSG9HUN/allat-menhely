@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SizeModal from "./SizeModal";
+import Pagination from "react-js-pagination";
 
 
 export default class Size extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sizes: []
+            sizes: [],
+            currentPage: 1,
+            total: '',
+            perPage: '',
         }
 
         this.getSizes = this.getSizes.bind(this)
@@ -16,17 +20,22 @@ export default class Size extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getSizes() {
-        axios.get('/api/size').then((response)=>{
+
+    getSizes(pageNumber = 1) {
+        axios.get(`/api/size?page=${pageNumber}`).then((response) => {
             this.setState({
-                sizes:response.data.sizes
+                sizes: response.data.sizes.data,
+                total: response.data.sizes.total,
+                perPage: response.data.sizes.per_page,
+                currentPage: response.data.sizes.current_page
+
             })
         })
     }
 
     renderSizes() {
-        return this.state.sizes.map((size,index)=>{
-            return(
+        return this.state.sizes.map((size, index) => {
+            return (
                 <tr key={index}>
                     <td>{size.id}</td>
                     <td>{size.name}</td>
@@ -56,14 +65,14 @@ export default class Size extends React.Component {
         this.getSizes()
     }
 
-    handleDelete(id){
-        axios.delete(`/api/size/${id}`).then(()=>{
+    handleDelete(id) {
+        axios.delete(`/api/size/${id}`).then(() => {
             this.reRenderSizes()
         })
     }
 
     render() {
-        return(
+        return (
             <>
                 <table>
                     <thead>
@@ -78,11 +87,21 @@ export default class Size extends React.Component {
                     </tbody>
                 </table>
                 <SizeModal reRenderSize={this.reRenderSize}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber) => {
+                            this.getSizes(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }
 }
 
-if(document.getElementById('general.size')){
-    ReactDOM.render(<Size/>,document.getElementById('general.size'))
+if (document.getElementById('general.size')) {
+    ReactDOM.render(<Size/>, document.getElementById('general.size'))
 }

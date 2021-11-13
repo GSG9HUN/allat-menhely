@@ -42,7 +42,7 @@ export default class CountiesModal extends React.Component{
     createEditForm() {
         return [
             <EditCountiesModal closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Megye módosítása</button>
+            <button onClick={this.openModal}>Megye módosítása</button>
         ]
     }
 

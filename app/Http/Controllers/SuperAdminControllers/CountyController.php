@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SuperAdminControllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\County;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ class CountyController extends Controller
 
     public function index(): JsonResponse
     {
-        $result= County::query()->get();
+        $result= County::query()->paginate(10);
 
         return response()->json(['counties'=>$result]);
     }

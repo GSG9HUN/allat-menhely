@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ColorsModal from "./ColorsModal";
+import Pagination from "react-js-pagination";
 
 
 export default class Colors extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            colors: []
+            colors: [],
+            perPage: '',
+            total: '',
+            currentPage:1
         }
 
         this.getColors = this.getColors.bind(this)
@@ -16,10 +20,13 @@ export default class Colors extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getColors() {
-        axios.get('/api/colors').then((response)=>{
+    getColors(pageNumber=1) {
+        axios.get(`/api/colors?page=${pageNumber}`).then((response)=>{
             this.setState({
-                colors:response.data.colors
+                colors:response.data.colors.data,
+                parPage: response.data.colors.per_page,
+                total: response.data.colors.total,
+                currentPage: response.data.colors.current_page
             })
         })
     }
@@ -79,6 +86,16 @@ export default class Colors extends React.Component {
                     </tbody>
                 </table>
                 <ColorsModal reRenderColors={this.reRenderColors}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getColors(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }

@@ -42,7 +42,7 @@ export default class SettlementModal extends React.Component{
     createEditForm() {
         return [
             <EditSettlement closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Település módosítása</button>
+            <button onClick={this.openModal}>Település módosítása</button>
         ]
     }
 

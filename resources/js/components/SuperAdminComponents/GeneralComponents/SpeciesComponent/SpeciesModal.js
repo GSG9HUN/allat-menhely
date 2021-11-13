@@ -42,7 +42,7 @@ export default class SpeciesModal extends React.Component{
     createEditForm() {
         return [
             <EditSpecies closeModal={this.closeModal} toEdit={this.props.toEdit}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Állatfaj módosítása</button>
+            <button onClick={this.openModal}>Állatfaj módosítása</button>
         ]
     }
 

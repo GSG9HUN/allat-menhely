@@ -12,9 +12,14 @@ class Roles extends Model
     protected $table = 'roles';
 
     protected $fillable = [
-        'name','id'
+        'name', 'id'
     ];
 
     protected $primaryKey = 'id';
+
+
+    const IS_USER = 1;
+    const IS_ADMIN = 2;
+    const IS_SUPER_ADMIN = 2;
 
 }

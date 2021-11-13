@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ColorController;
-use App\Http\Controllers\CountyController;
-use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\SelectSearchController;
-use App\Http\Controllers\SettlementController;
-use App\Http\Controllers\SizeController;
-use App\Http\Controllers\SpeciesController;
+use App\Http\Controllers\SuperAdminControllers\CountyController;
+use App\Http\Controllers\SuperAdminControllers\SpeciesController;
+use App\Http\Controllers\SuperAdminControllers\SettlementController;
+use App\Http\Controllers\SuperAdminControllers\CategoryController;
+use App\Http\Controllers\SuperAdminControllers\ColorController;
+use App\Http\Controllers\SuperAdminControllers\InvitationController;
+use App\Http\Controllers\SuperAdminControllers\SizeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

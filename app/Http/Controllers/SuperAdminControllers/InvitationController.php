@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\SuperAdminControllers;
 
+use App\Http\Controllers\Controller;
 use App\Mail\RegistrationInvitationSend;
 use App\Models\Invitation;
 use Illuminate\Http\JsonResponse;
@@ -13,7 +14,7 @@ class InvitationController extends Controller
 {
     function index(): JsonResponse
     {
-        $result = Invitation::query()->get();
+        $result = Invitation::query()->orderBy('id','desc')->paginate(10);
         return response()->json(['invitations' => $result]);
     }
 

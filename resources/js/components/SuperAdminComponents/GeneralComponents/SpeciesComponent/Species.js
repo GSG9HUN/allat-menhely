@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SpeciesModal from "./SpeciesModal";
+import Pagination from "react-js-pagination";
 
 export default class Species extends React.Component{
     constructor(props) {
         super(props);
         this.state={
-            species:[]
+            species:[],
+            total:'',
+            perPage:'',
+            currentPage:1,
         }
         this.getSpecies = this.getSpecies.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
@@ -14,11 +18,13 @@ export default class Species extends React.Component{
         this.reRenderSpecies = this.reRenderSpecies.bind(this)
     }
 
-    getSpecies(){
-        axios.get('/api/species').then((response)=>{
-            console.log(response)
+    getSpecies(pageNumber=1){
+        axios.get(`/api/species?page=${pageNumber}`).then((response)=>{
             this.setState({
-                species:response.data.species
+                species:response.data.species.data,
+                total:response.data.species.total,
+                perPage:response.data.species.per_page,
+                currentPage:response.data.species.current_page
             })
         })
     }
@@ -81,6 +87,16 @@ export default class Species extends React.Component{
                     </tbody>
                 </table>
                 <SpeciesModal reRenderSpecies={this.reRenderSpecies}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getSpecies(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }

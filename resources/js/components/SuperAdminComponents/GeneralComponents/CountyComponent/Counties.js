@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import CountiesModal from "./CountiesModal";
+import Pagination from "react-js-pagination";
 
 export default class Counties extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            counties: []
+            counties: [],
+            perPage:'',
+            total:'',
+            currentPage:1,
         }
         this.getCounties = this.getCounties.bind(this)
         this.renderCounties = this.renderCounties.bind(this)
@@ -14,10 +18,13 @@ export default class Counties extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getCounties() {
-        axios.get('/api/counties').then((response) => {
+    getCounties(pageNumber =1 ) {
+        axios.get(`/api/counties?page=${pageNumber}`).then((response) => {
             this.setState({
-                counties: response.data.counties
+                counties: response.data.counties.data,
+                perPage: response.data.counties.per_page,
+                total: response.data.counties.total,
+                currentPage: response.data.counties.current_page
             })
         })
     }
@@ -77,6 +84,16 @@ export default class Counties extends React.Component {
                     </tbody>
                 </table>
                 <CountiesModal reRenderCounties={this.reRenderCounties}/>
+                <div className={'pagination-container'}>
+                    <Pagination
+                        onChange={(pageNumber)=>{
+                            this.getCounties(pageNumber)
+                        }}
+                        itemsCountPerPage={this.state.perPage}
+                        totalItemsCount={this.state.total}
+                        activePage={this.state.currentPage}
+                    />
+                </div>
             </>
         )
     }

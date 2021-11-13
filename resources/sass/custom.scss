@@ -9,16 +9,51 @@
 }
 
 
-.form-buttons{
+.form-buttons {
     float: right;
 }
 
-.validation-error{
+.validation-error {
     margin-bottom: 5%;
     font-size: medium;
 
-    p{
+    p {
         color: #761b18;
     }
 }
 
+.button-img {
+
+    display: flex;
+
+    .edit {
+        background: transparent;
+        padding: 0;
+        margin-right: 5px;
+        button {
+            width: 35px;
+            height: 35px;
+            background: url('/images/edit.png') top left no-repeat;
+            background-size: 35px;
+            cursor: pointer;
+            border: none;
+            text-indent: -9999em;
+
+        }
+    }
+
+    .delete {
+        background: transparent;
+        margin-left:5px;
+        button {
+            width: 35px;
+            height: 35px;
+            background: url('/images/delete.png') top left no-repeat;
+            background-size: 35px;
+            cursor: pointer;
+            border: none;
+            text-indent: -9999em;
+        }
+
+    }
+}
