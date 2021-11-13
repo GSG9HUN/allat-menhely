@@ -2720,7 +2720,7 @@ module.exports = function transformData(data, headers, fns) {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
@@ -3818,7 +3818,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
+  window.Popper = (__webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"]);
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
@@ -4052,7 +4052,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Category = /*#__PURE__*/function (_React$Component) {
   _inherits(Category, _React$Component);
 
@@ -4150,8 +4149,10 @@ var Category = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -4165,8 +4166,11 @@ var Category = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderCategories()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CategoryModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderCategories: this.reRenderCategories
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CategoryModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderCategories: this.reRenderCategories
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -4667,7 +4671,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Colors = /*#__PURE__*/function (_React$Component) {
   _inherits(Colors, _React$Component);
 
@@ -4765,8 +4768,10 @@ var Colors = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -4780,8 +4785,11 @@ var Colors = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderColors()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ColorsModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderColors: this.reRenderColors
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ColorsModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderColors: this.reRenderColors
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5282,7 +5290,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Counties = /*#__PURE__*/function (_React$Component) {
   _inherits(Counties, _React$Component);
 
@@ -5380,7 +5387,8 @@ var Counties = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
           className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
@@ -5396,8 +5404,11 @@ var Counties = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderCounties()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CountiesModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderCounties: this.reRenderCounties
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CountiesModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderCounties: this.reRenderCounties
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -6134,7 +6145,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Settlement = /*#__PURE__*/function (_React$Component) {
   _inherits(Settlement, _React$Component);
 
@@ -6236,8 +6246,10 @@ var Settlement = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -6253,8 +6265,11 @@ var Settlement = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderSettlement()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SettlementModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderSettlement: this.reRenderSettlement
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SettlementModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderSettlement: this.reRenderSettlement
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -6755,7 +6770,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Size = /*#__PURE__*/function (_React$Component) {
   _inherits(Size, _React$Component);
 
@@ -6853,8 +6867,10 @@ var Size = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -6868,8 +6884,11 @@ var Size = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderSizes()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SizeModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderSize: this.reRenderSize
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SizeModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderSize: this.reRenderSize
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -7501,7 +7520,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var Species = /*#__PURE__*/function (_React$Component) {
   _inherits(Species, _React$Component);
 
@@ -7603,8 +7621,10 @@ var Species = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -7622,8 +7642,11 @@ var Species = /*#__PURE__*/function (_React$Component) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
             children: this.renderSpecies()
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SpeciesModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          reRenderSpecies: this.reRenderSpecies
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: 'row-buttons',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SpeciesModal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            reRenderSpecies: this.reRenderSpecies
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: 'pagination-container',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_js_pagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -41222,10 +41245,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/custom.scss":
-/*!************************************!*\
-  !*** ./resources/sass/custom.scss ***!
-  \************************************/
+/***/ "./resources/sass/superAdminCustom.scss":
+/*!**********************************************!*\
+  !*** ./resources/sass/superAdminCustom.scss ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -71560,7 +71583,153 @@ Object.defineProperty(exports, "__esModule", ({value:!0}));var _createClass=func
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", ({value:!0}));var _createClass=function(){function e(e,a){for(var t=0;t<a.length;t++){var s=a[t];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}return function(a,t,s){return t&&e(a.prototype,t),s&&e(a,s),a}}(),_react=__webpack_require__(/*! react */ "./node_modules/react-js-pagination/node_modules/react/index.js"),_react2=_interopRequireDefault(_react),_propTypes=__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"),_propTypes2=_interopRequireDefault(_propTypes),_paginator=__webpack_require__(/*! paginator */ "./node_modules/paginator/index.js"),_paginator2=_interopRequireDefault(_paginator),_Page=__webpack_require__(/*! ./Page */ "./node_modules/react-js-pagination/dist/Page.js"),_Page2=_interopRequireDefault(_Page),_classnames=__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"),_classnames2=_interopRequireDefault(_classnames);function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}function _classCallCheck(e,a){if(!(e instanceof a))throw new TypeError("Cannot call a class as a function")}function _possibleConstructorReturn(e,a){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!a||"object"!=typeof a&&"function"!=typeof a?e:a}function _inherits(e,a){if("function"!=typeof a&&null!==a)throw new TypeError("Super expression must either be null or a function, not "+typeof a);e.prototype=Object.create(a&&a.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),a&&(Object.setPrototypeOf?Object.setPrototypeOf(e,a):e.__proto__=a)}var Pagination=function(e){function a(){return _classCallCheck(this,a),_possibleConstructorReturn(this,(a.__proto__||Object.getPrototypeOf(a)).apply(this,arguments))}return _inherits(a,_react2.default.Component),_createClass(a,[{key:"isFirstPageVisible",value:function(e){var a=this.props,t=a.hideDisabled;a.hideNavigation;return!(a.hideFirstLastPages||t&&!e)}},{key:"isPrevPageVisible",value:function(e){var a=this.props,t=a.hideDisabled;return!(a.hideNavigation||t&&!e)}},{key:"isNextPageVisible",value:function(e){var a=this.props,t=a.hideDisabled;return!(a.hideNavigation||t&&!e)}},{key:"isLastPageVisible",value:function(e){var a=this.props,t=a.hideDisabled;a.hideNavigation;return!(a.hideFirstLastPages||t&&!e)}},{key:"buildPages",value:function(){for(var e=[],a=this.props,t=a.itemsCountPerPage,s=a.pageRangeDisplayed,i=a.activePage,r=a.prevPageText,l=a.nextPageText,n=a.firstPageText,u=a.lastPageText,o=a.totalItemsCount,p=a.onChange,c=a.activeClass,g=a.itemClass,_=a.itemClassFirst,f=a.itemClassPrev,d=a.itemClassNext,h=a.itemClassLast,C=a.activeLinkClass,P=a.disabledClass,b=(a.hideDisabled,a.hideNavigation,a.linkClass),v=a.linkClassFirst,m=a.linkClassPrev,k=a.linkClassNext,y=a.linkClassLast,x=(a.hideFirstLastPages,a.getPageUrl),T=new _paginator2.default(t,s).build(o,i),D=T.first_page;D<=T.last_page;D++)e.push(_react2.default.createElement(_Page2.default,{isActive:D===i,key:D,href:x(D),pageNumber:D,pageText:D+"",onClick:p,itemClass:g,linkClass:b,activeClass:c,activeLinkClass:C}));return this.isPrevPageVisible(T.has_previous_page)&&e.unshift(_react2.default.createElement(_Page2.default,{key:"prev"+T.previous_page,pageNumber:T.previous_page,onClick:p,pageText:r,isDisabled:!T.has_previous_page,itemClass:(0,_classnames2.default)(g,f),linkClass:(0,_classnames2.default)(b,m),disabledClass:P})),this.isFirstPageVisible(T.has_previous_page)&&e.unshift(_react2.default.createElement(_Page2.default,{key:"first",pageNumber:1,onClick:p,pageText:n,isDisabled:!T.has_previous_page,itemClass:(0,_classnames2.default)(g,_),linkClass:(0,_classnames2.default)(b,v),disabledClass:P})),this.isNextPageVisible(T.has_next_page)&&e.push(_react2.default.createElement(_Page2.default,{key:"next"+T.next_page,pageNumber:T.next_page,onClick:p,pageText:l,isDisabled:!T.has_next_page,itemClass:(0,_classnames2.default)(g,d),linkClass:(0,_classnames2.default)(b,k),disabledClass:P})),this.isLastPageVisible(T.has_next_page)&&e.push(_react2.default.createElement(_Page2.default,{key:"last",pageNumber:T.total_pages,onClick:p,pageText:u,isDisabled:T.current_page===T.total_pages,itemClass:(0,_classnames2.default)(g,h),linkClass:(0,_classnames2.default)(b,y),disabledClass:P})),e}},{key:"render",value:function(){var e=this.buildPages();return _react2.default.createElement("ul",{className:this.props.innerClass},e)}}]),a}();Pagination.defaultProps={itemsCountPerPage:10,pageRangeDisplayed:5,activePage:1,prevPageText:"⟨",firstPageText:"«",nextPageText:"⟩",lastPageText:"»",innerClass:"pagination",itemClass:void 0,linkClass:void 0,activeLinkClass:void 0,hideFirstLastPages:!1,getPageUrl:function(e){return"#"}},exports["default"]=Pagination;
+
+Object.defineProperty(exports, "__esModule", ({value: !0}));
+var _createClass = function () {
+        function e(e, a) {
+            for (var t = 0; t < a.length; t++) {
+                var s = a[t];
+                s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s && (s.writable = !0), Object.defineProperty(e, s.key, s)
+            }
+        }
+
+        return function (a, t, s) {
+            return t && e(a.prototype, t), s && e(a, s), a
+        }
+    }(), _react = __webpack_require__(/*! react */ "./node_modules/react-js-pagination/node_modules/react/index.js"), _react2 = _interopRequireDefault(_react), _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"),
+    _propTypes2 = _interopRequireDefault(_propTypes), _paginator = __webpack_require__(/*! paginator */ "./node_modules/paginator/index.js"),
+    _paginator2 = _interopRequireDefault(_paginator), _Page = __webpack_require__(/*! ./Page */ "./node_modules/react-js-pagination/dist/Page.js"), _Page2 = _interopRequireDefault(_Page),
+    _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"), _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(e) {
+    return e && e.__esModule ? e : {default: e}
+}
+
+function _classCallCheck(e, a) {
+    if (!(e instanceof a)) throw new TypeError("Cannot call a class as a function")
+}
+
+function _possibleConstructorReturn(e, a) {
+    if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return !a || "object" != typeof a && "function" != typeof a ? e : a
+}
+
+function _inherits(e, a) {
+    if ("function" != typeof a && null !== a) throw new TypeError("Super expression must either be null or a function, not " + typeof a);
+    e.prototype = Object.create(a && a.prototype, {
+        constructor: {
+            value: e,
+            enumerable: !1,
+            writable: !0,
+            configurable: !0
+        }
+    }), a && (Object.setPrototypeOf ? Object.setPrototypeOf(e, a) : e.__proto__ = a)
+}
+
+var Pagination = function (e) {
+    function a() {
+        return _classCallCheck(this, a), _possibleConstructorReturn(this, (a.__proto__ || Object.getPrototypeOf(a)).apply(this, arguments))
+    }
+
+    return _inherits(a, _react2.default.Component), _createClass(a, [{
+        key: "isFirstPageVisible", value: function (e) {
+            var a = this.props, t = a.hideDisabled;
+            a.hideNavigation;
+            return !(a.hideFirstLastPages || t && !e)
+        }
+    }, {
+        key: "isPrevPageVisible", value: function (e) {
+            var a = this.props, t = a.hideDisabled;
+            return !(a.hideNavigation || t && !e)
+        }
+    }, {
+        key: "isNextPageVisible", value: function (e) {
+            var a = this.props, t = a.hideDisabled;
+            return !(a.hideNavigation || t && !e)
+        }
+    }, {
+        key: "isLastPageVisible", value: function (e) {
+            var a = this.props, t = a.hideDisabled;
+            a.hideNavigation;
+            return !(a.hideFirstLastPages || t && !e)
+        }
+    }, {
+        key: "buildPages", value: function () {
+            for (var e = [], a = this.props, t = a.itemsCountPerPage, s = a.pageRangeDisplayed, i = a.activePage, r = a.prevPageText, l = a.nextPageText, n = a.firstPageText, u = a.lastPageText, o = a.totalItemsCount, p = a.onChange, c = a.activeClass, g = a.itemClass, _ = a.itemClassFirst, f = a.itemClassPrev, d = a.itemClassNext, h = a.itemClassLast, C = a.activeLinkClass, P = a.disabledClass, b = (a.hideDisabled, a.hideNavigation, a.linkClass), v = a.linkClassFirst, m = a.linkClassPrev, k = a.linkClassNext, y = a.linkClassLast, x = (a.hideFirstLastPages, a.getPageUrl), T = new _paginator2.default(t, s).build(o, i), D = T.first_page; D <= T.last_page; D++) e.push(_react2.default.createElement(_Page2.default, {
+                isActive: D === i,
+                key: D,
+                href: x(D),
+                pageNumber: D,
+                pageText: D + "",
+                onClick: p,
+                itemClass: g,
+                linkClass: b,
+                activeClass: c,
+                activeLinkClass: C
+            }));
+            return this.isPrevPageVisible(T.has_previous_page) && e.unshift(_react2.default.createElement(_Page2.default, {
+                key: "prev" + T.previous_page,
+                pageNumber: T.previous_page,
+                onClick: p,
+                pageText: r,
+                isDisabled: !T.has_previous_page,
+                itemClass: (0, _classnames2.default)(g, f),
+                linkClass: (0, _classnames2.default)(b, m),
+                disabledClass: P
+            })), this.isFirstPageVisible(T.has_previous_page) && e.unshift(_react2.default.createElement(_Page2.default, {
+                key: "first",
+                pageNumber: 1,
+                onClick: p,
+                pageText: n,
+                isDisabled: !T.has_previous_page,
+                itemClass: (0, _classnames2.default)(g, _),
+                linkClass: (0, _classnames2.default)(b, v),
+                disabledClass: P
+            })), this.isNextPageVisible(T.has_next_page) && e.push(_react2.default.createElement(_Page2.default, {
+                key: "next" + T.next_page,
+                pageNumber: T.next_page,
+                onClick: p,
+                pageText: l,
+                isDisabled: !T.has_next_page,
+                itemClass: (0, _classnames2.default)(g, d),
+                linkClass: (0, _classnames2.default)(b, k),
+                disabledClass: P
+            })), this.isLastPageVisible(T.has_next_page) && e.push(_react2.default.createElement(_Page2.default, {
+                key: "last",
+                pageNumber: T.total_pages,
+                onClick: p,
+                pageText: u,
+                isDisabled: T.current_page === T.total_pages,
+                itemClass: (0, _classnames2.default)(g, h),
+                linkClass: (0, _classnames2.default)(b, y),
+                disabledClass: P
+            })), e
+        }
+    }, {
+        key: "render", value: function () {
+            var e = this.buildPages();
+            return _react2.default.createElement("ul", {className: this.props.innerClass}, e)
+        }
+    }]), a
+}();
+Pagination.defaultProps = {
+    itemsCountPerPage: 10,
+    pageRangeDisplayed: 5,
+    activePage: 1,
+    prevPageText: "⟨",
+    firstPageText: "«",
+    nextPageText: "⟩",
+    lastPageText: "»",
+    innerClass: "pagination",
+    itemClass: void 0,
+    linkClass: void 0,
+    activeLinkClass: void 0,
+    hideFirstLastPages: !1,
+    getPageUrl: function (e) {
+        return "#"
+    }
+}, exports["default"] = Pagination;
+
 
 /***/ }),
 
@@ -86260,7 +86429,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/custom": 0,
+/******/ 			"css/superAdminCustom": 0,
 /******/ 			"css/header": 0
 /******/ 		};
 /******/ 		
@@ -86311,10 +86480,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom","css/header"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom","css/header"], () => (__webpack_require__("./resources/sass/header.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/custom","css/header"], () => (__webpack_require__("./resources/sass/custom.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/header.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/superAdminCustom.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

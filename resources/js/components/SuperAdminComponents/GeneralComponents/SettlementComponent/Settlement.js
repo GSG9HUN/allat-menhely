@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import SettlementModal from "./SettlementModal";
 import Pagination from "react-js-pagination";
 
-export default class Settlement extends React.Component{
+export default class Settlement extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            settlement : [],
+        this.state = {
+            settlement: [],
             currentPage: 1,
             perPage: '',
-            total:'',
+            total: '',
         }
 
         this.getSettlement = this.getSettlement.bind(this)
@@ -19,21 +19,21 @@ export default class Settlement extends React.Component{
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getSettlement(pageNumber = 1){
-        axios.get(`/api/settlement?page=${pageNumber}`).then((response)=>{
+    getSettlement(pageNumber = 1) {
+        axios.get(`/api/settlement?page=${pageNumber}`).then((response) => {
             console.log(response.data)
             this.setState({
-                settlement :response.data.settlement.data,
-                perPage:response.data.settlement.per_page,
-                total:response.data.settlement.total,
-                currentPage:response.data.settlement.current_page,
+                settlement: response.data.settlement.data,
+                perPage: response.data.settlement.per_page,
+                total: response.data.settlement.total,
+                currentPage: response.data.settlement.current_page,
             })
         })
     }
 
-    renderSettlement(){
-        return this.state.settlement.map((settlement,index)=>{
-            return(
+    renderSettlement() {
+        return this.state.settlement.map((settlement, index) => {
+            return (
                 <tr key={index}>
                     <td>{settlement.id}</td>
                     <td>{settlement.name}</td>
@@ -57,13 +57,13 @@ export default class Settlement extends React.Component{
         })
     }
 
-    handleDelete(id){
-        axios.delete(`/api/settlement/${id}`).then(()=>{
+    handleDelete(id) {
+        axios.delete(`/api/settlement/${id}`).then(() => {
             this.getSettlement()
         })
     }
 
-    reRenderSettlement(){
+    reRenderSettlement() {
         this.getSettlement()
     }
 
@@ -72,9 +72,9 @@ export default class Settlement extends React.Component{
     }
 
     render() {
-        return(
-            <>
-                <table>
+        return (
+            <div className={'table-container'}>
+                <table className={'data-table'}>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -87,10 +87,12 @@ export default class Settlement extends React.Component{
                     {this.renderSettlement()}
                     </tbody>
                 </table>
-                <SettlementModal reRenderSettlement={this.reRenderSettlement}/>
+                <div className={'row-buttons'}>
+                    <SettlementModal reRenderSettlement={this.reRenderSettlement}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
-                        onChange={(pageNumber)=>{
+                        onChange={(pageNumber) => {
                             this.getSettlement(pageNumber)
                         }}
                         itemsCountPerPage={this.state.perPage}
@@ -98,12 +100,12 @@ export default class Settlement extends React.Component{
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 
 }
 
-if(document.getElementById('general.settlement')){
-    ReactDOM.render(<Settlement/>,document.getElementById('general.settlement'))
+if (document.getElementById('general.settlement')) {
+    ReactDOM.render(<Settlement/>, document.getElementById('general.settlement'))
 }

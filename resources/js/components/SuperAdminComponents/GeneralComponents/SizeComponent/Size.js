@@ -73,8 +73,8 @@ export default class Size extends React.Component {
 
     render() {
         return (
-            <>
-                <table>
+            <div className={'table-container'}>
+                <table className={'data-table'} >
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -86,7 +86,9 @@ export default class Size extends React.Component {
                     {this.renderSizes()}
                     </tbody>
                 </table>
-                <SizeModal reRenderSize={this.reRenderSize}/>
+                <div className={'row-buttons'}>
+                    <SizeModal reRenderSize={this.reRenderSize}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
                         onChange={(pageNumber) => {
@@ -97,7 +99,7 @@ export default class Size extends React.Component {
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 }

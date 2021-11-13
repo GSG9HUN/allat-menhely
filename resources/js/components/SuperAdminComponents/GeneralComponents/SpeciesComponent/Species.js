@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import SpeciesModal from "./SpeciesModal";
 import Pagination from "react-js-pagination";
 
-export default class Species extends React.Component{
+export default class Species extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            species:[],
-            total:'',
-            perPage:'',
-            currentPage:1,
+        this.state = {
+            species: [],
+            total: '',
+            perPage: '',
+            currentPage: 1,
         }
         this.getSpecies = this.getSpecies.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
@@ -18,20 +18,20 @@ export default class Species extends React.Component{
         this.reRenderSpecies = this.reRenderSpecies.bind(this)
     }
 
-    getSpecies(pageNumber=1){
-        axios.get(`/api/species?page=${pageNumber}`).then((response)=>{
+    getSpecies(pageNumber = 1) {
+        axios.get(`/api/species?page=${pageNumber}`).then((response) => {
             this.setState({
-                species:response.data.species.data,
-                total:response.data.species.total,
-                perPage:response.data.species.per_page,
-                currentPage:response.data.species.current_page
+                species: response.data.species.data,
+                total: response.data.species.total,
+                perPage: response.data.species.per_page,
+                currentPage: response.data.species.current_page
             })
         })
     }
 
-    renderSpecies(){
-        return this.state.species.map((specie,index)=>{
-            return(
+    renderSpecies() {
+        return this.state.species.map((specie, index) => {
+            return (
                 <tr key={index}>
                     <td>{specie.id}</td>
                     <td>{specie.name}</td>
@@ -55,7 +55,7 @@ export default class Species extends React.Component{
         })
     }
 
-    reRenderSpecies(){
+    reRenderSpecies() {
         this.getSpecies()
     }
 
@@ -63,33 +63,35 @@ export default class Species extends React.Component{
         this.getSpecies()
     }
 
-    handleDelete(id){
-        axios.delete(`/api/species/${id}`).then(()=>{
+    handleDelete(id) {
+        axios.delete(`/api/species/${id}`).then(() => {
             this.renderSpecies()
         })
     }
 
     render() {
-        return(
-            <>
-                <table>
+        return (
+            <div className={'table-container'}>
+                <table className={'data-table'}>
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Faj név</th>
-                            <th>Állat név</th>
-                            <th>Szőr típusa</th>
-                            <th>Műveletek</th>
-                        </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Faj név</th>
+                        <th>Állat név</th>
+                        <th>Szőr típusa</th>
+                        <th>Műveletek</th>
+                    </tr>
                     </thead>
                     <tbody>
                     {this.renderSpecies()}
                     </tbody>
                 </table>
-                <SpeciesModal reRenderSpecies={this.reRenderSpecies}/>
+                <div className={'row-buttons'}>
+                    <SpeciesModal reRenderSpecies={this.reRenderSpecies}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
-                        onChange={(pageNumber)=>{
+                        onChange={(pageNumber) => {
                             this.getSpecies(pageNumber)
                         }}
                         itemsCountPerPage={this.state.perPage}
@@ -97,11 +99,11 @@ export default class Species extends React.Component{
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 }
 
-if(document.getElementById('general.species')){
-    ReactDOM.render(<Species/>,document.getElementById('general.species'))
+if (document.getElementById('general.species')) {
+    ReactDOM.render(<Species/>, document.getElementById('general.species'))
 }

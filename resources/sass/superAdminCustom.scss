@@ -1,0 +1,125 @@
+.ReactModal__Overlay--after-open {
+    z-index: 1;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+
+.form-buttons {
+    float: right;
+}
+
+.validation-error {
+    margin-bottom: 5%;
+    font-size: medium;
+
+    p {
+        color: #761b18;
+    }
+}
+
+.button-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .edit {
+        background: transparent;
+        padding: 0;
+        margin-right: 5px;
+
+        button {
+            width: 35px;
+            height: 35px;
+            background: url('/images/edit.png') top left no-repeat;
+            background-size: 35px;
+            cursor: pointer;
+            border: none;
+            text-indent: -9999em;
+
+        }
+    }
+
+    .delete {
+        background: transparent;
+        margin-left: 5px;
+
+        button {
+            width: 35px;
+            height: 35px;
+            background: url('/images/delete.png') top left no-repeat;
+            background-size: 35px;
+            cursor: pointer;
+            border: none;
+            text-indent: -9999em;
+        }
+
+    }
+}
+
+
+.table-container {
+    width: 100%;
+    color: rgba(213, 230, 231, 255);
+
+
+    thead {
+        background: rgba(33, 40, 50, 255);
+        color: rgba(254, 233, 207, 255);
+        height: 50px;
+
+        th {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+    table {
+        width: 100%;
+        background: rgba(45, 57, 69, 255);
+
+        td {
+            text-align: center;
+            padding-top: 2%;
+        }
+
+        tr:nth-child(2n) {
+            background: rgba(36, 47, 56, 255);
+            padding-top: 50%;
+        }
+    }
+
+    .pagination-container {
+        display: flex;
+        width: 100%;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+
+        ul {
+
+            margin: 0;
+
+            li {
+                margin: 0 5px 0 5px;
+            }
+        }
+
+        .pagination {
+            margin: auto;
+        }
+    }
+
+    .row-buttons {
+        float: right;
+    }
+
+}
+
+
+

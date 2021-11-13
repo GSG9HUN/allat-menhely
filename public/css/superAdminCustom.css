@@ -1,0 +1,100 @@
+.ReactModal__Overlay--after-open {
+  z-index: 1;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.form-buttons {
+  float: right;
+}
+
+.validation-error {
+  margin-bottom: 5%;
+  font-size: medium;
+}
+.validation-error p {
+  color: #761b18;
+}
+
+.button-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button-img .edit {
+  background: transparent;
+  padding: 0;
+  margin-right: 5px;
+}
+.button-img .edit button {
+  width: 35px;
+  height: 35px;
+  background: url("/images/edit.png") top left no-repeat;
+  background-size: 35px;
+  cursor: pointer;
+  border: none;
+  text-indent: -9999em;
+}
+.button-img .delete {
+  background: transparent;
+  margin-left: 5px;
+}
+.button-img .delete button {
+  width: 35px;
+  height: 35px;
+  background: url("/images/delete.png") top left no-repeat;
+  background-size: 35px;
+  cursor: pointer;
+  border: none;
+  text-indent: -9999em;
+}
+
+.table-container {
+  width: 100%;
+  color: #d5e6e7;
+}
+.table-container thead {
+  background: #212832;
+  color: #fee9cf;
+  height: 50px;
+}
+.table-container thead th {
+  font-size: 20px;
+  text-align: center;
+}
+.table-container table {
+  width: 100%;
+  background: #2d3945;
+}
+.table-container table td {
+  text-align: center;
+  padding-top: 2%;
+}
+.table-container table tr:nth-child(2n) {
+  background: #242f38;
+  padding-top: 50%;
+}
+.table-container .pagination-container {
+  display: flex;
+  width: 100%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.table-container .pagination-container ul {
+  margin: 0;
+}
+.table-container .pagination-container ul li {
+  margin: 0 5px 0 5px;
+}
+.table-container .pagination-container .pagination {
+  margin: auto;
+}
+.table-container .row-buttons {
+  float: right;
+}

@@ -9,9 +9,9 @@ export default class Category extends React.Component {
         super(props);
         this.state = {
             categories: [],
-            perPage:'',
-            total:'',
-            currentPage:1
+            perPage: '',
+            total: '',
+            currentPage: 1
         }
         this.getCategories = this.getCategories.bind(this)
         this.renderCategories = this.renderCategories.bind(this)
@@ -24,8 +24,8 @@ export default class Category extends React.Component {
             this.setState({
                 categories: response.data.categories.data,
                 perPage: response.data.categories.per_page,
-                total:response.data.categories.total,
-                currentPage:response.data.categories.current_page,
+                total: response.data.categories.total,
+                currentPage: response.data.categories.current_page,
             })
         })
     }
@@ -72,8 +72,8 @@ export default class Category extends React.Component {
 
     render() {
         return (
-            <>
-                <table>
+            <div className={'table-container'}>
+                <table className={'data-table'}>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -85,10 +85,12 @@ export default class Category extends React.Component {
                     {this.renderCategories()}
                     </tbody>
                 </table>
-                <CategoryModal reRenderCategories={this.reRenderCategories}/>
+                <div className={'row-buttons'}>
+                    <CategoryModal reRenderCategories={this.reRenderCategories}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
-                        onChange={(pageNumber)=>{
+                        onChange={(pageNumber) => {
                             this.getCategories(pageNumber)
                         }}
                         itemsCountPerPage={this.state.perPage}
@@ -96,7 +98,7 @@ export default class Category extends React.Component {
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 

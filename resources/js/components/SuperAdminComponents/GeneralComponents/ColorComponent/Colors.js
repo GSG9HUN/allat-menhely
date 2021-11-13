@@ -11,7 +11,7 @@ export default class Colors extends React.Component {
             colors: [],
             perPage: '',
             total: '',
-            currentPage:1
+            currentPage: 1
         }
 
         this.getColors = this.getColors.bind(this)
@@ -20,10 +20,10 @@ export default class Colors extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getColors(pageNumber=1) {
-        axios.get(`/api/colors?page=${pageNumber}`).then((response)=>{
+    getColors(pageNumber = 1) {
+        axios.get(`/api/colors?page=${pageNumber}`).then((response) => {
             this.setState({
-                colors:response.data.colors.data,
+                colors: response.data.colors.data,
                 parPage: response.data.colors.per_page,
                 total: response.data.colors.total,
                 currentPage: response.data.colors.current_page
@@ -32,8 +32,8 @@ export default class Colors extends React.Component {
     }
 
     renderColors() {
-        return this.state.colors.map((color,index)=>{
-            return(
+        return this.state.colors.map((color, index) => {
+            return (
                 <tr key={index}>
                     <td>{color.id}</td>
                     <td>{color.name}</td>
@@ -63,17 +63,17 @@ export default class Colors extends React.Component {
         this.getColors()
     }
 
-    handleDelete(id){
-        axios.delete(`/api/colors/${id}`).then(()=>{
+    handleDelete(id) {
+        axios.delete(`/api/colors/${id}`).then(() => {
             this.reRenderColors()
         })
     }
 
 
     render() {
-        return(
-            <>
-                <table>
+        return (
+            <div className={'table-container'}>
+                <table className={'data-table'}>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -85,10 +85,12 @@ export default class Colors extends React.Component {
                     {this.renderColors()}
                     </tbody>
                 </table>
-                <ColorsModal reRenderColors={this.reRenderColors}/>
+                <div className={'row-buttons'}>
+                    <ColorsModal reRenderColors={this.reRenderColors}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
-                        onChange={(pageNumber)=>{
+                        onChange={(pageNumber) => {
                             this.getColors(pageNumber)
                         }}
                         itemsCountPerPage={this.state.perPage}
@@ -96,11 +98,11 @@ export default class Colors extends React.Component {
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 }
 
-if(document.getElementById('general.colors')){
-    ReactDOM.render(<Colors/>,document.getElementById('general.colors'))
+if (document.getElementById('general.colors')) {
+    ReactDOM.render(<Colors/>, document.getElementById('general.colors'))
 }

@@ -8,9 +8,9 @@ export default class Counties extends React.Component {
         super(props);
         this.state = {
             counties: [],
-            perPage:'',
-            total:'',
-            currentPage:1,
+            perPage: '',
+            total: '',
+            currentPage: 1,
         }
         this.getCounties = this.getCounties.bind(this)
         this.renderCounties = this.renderCounties.bind(this)
@@ -18,7 +18,7 @@ export default class Counties extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    getCounties(pageNumber =1 ) {
+    getCounties(pageNumber = 1) {
         axios.get(`/api/counties?page=${pageNumber}`).then((response) => {
             this.setState({
                 counties: response.data.counties.data,
@@ -62,15 +62,15 @@ export default class Counties extends React.Component {
         this.getCounties()
     }
 
-    handleDelete(id){
-        axios.delete(`/api/counties/${id}`).then(()=>{
+    handleDelete(id) {
+        axios.delete(`/api/counties/${id}`).then(() => {
             this.reRenderCounties()
         })
     }
 
     render() {
         return (
-            <>
+            <div className={'table-container'}>
                 <table className={'data-table'}>
                     <thead>
                     <tr>
@@ -83,10 +83,12 @@ export default class Counties extends React.Component {
                     {this.renderCounties()}
                     </tbody>
                 </table>
-                <CountiesModal reRenderCounties={this.reRenderCounties}/>
+                <div className={'row-buttons'}>
+                    <CountiesModal reRenderCounties={this.reRenderCounties}/>
+                </div>
                 <div className={'pagination-container'}>
                     <Pagination
-                        onChange={(pageNumber)=>{
+                        onChange={(pageNumber) => {
                             this.getCounties(pageNumber)
                         }}
                         itemsCountPerPage={this.state.perPage}
@@ -94,7 +96,7 @@ export default class Counties extends React.Component {
                         activePage={this.state.currentPage}
                     />
                 </div>
-            </>
+            </div>
         )
     }
 }
