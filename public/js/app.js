@@ -3863,10 +3863,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ErrorWriter = function ErrorWriter(_ref) {
   var errors = _ref.errors;
-  console.log(errors);
-  console.log('hello?');
   var keys = Object.keys(errors);
-  console.log(keys);
   return keys.map(function (key) {
     return errors[key].map(function (data, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {

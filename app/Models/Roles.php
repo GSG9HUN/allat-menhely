@@ -17,9 +17,7 @@ class Roles extends Model
 
     protected $primaryKey = 'id';
 
-
-    const IS_USER = 1;
     const IS_ADMIN = 2;
-    const IS_SUPER_ADMIN = 2;
+    const IS_SUPER_ADMIN = 3;
 
 }

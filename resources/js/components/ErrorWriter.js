@@ -1,9 +1,6 @@
 export const ErrorWriter = ({errors}) => {
-    console.log(errors)
-    console.log('hello?')
 
     const keys = Object.keys(errors)
-    console.log(keys)
 
     return keys.map((key) => {
         return errors[key].map((data, index) => {
@@ -13,7 +10,6 @@ export const ErrorWriter = ({errors}) => {
                         {data}
                     </p>
                 </div>
-
             )
         })
     })

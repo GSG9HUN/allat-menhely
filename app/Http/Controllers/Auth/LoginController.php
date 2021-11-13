@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Roles;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -21,12 +23,15 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::ADMIN_DASHBOARD;
+
+    public function redirectTo(): string
+    {
+        return match (Auth::user()->role_id) {
+            Roles::IS_SUPER_ADMIN => '/super_admin_dashboard',
+            Roles::IS_ADMIN => '/admin_dashboard',
+            default => '/',
+        };
+    }
 
     /**
      * Create a new controller instance.

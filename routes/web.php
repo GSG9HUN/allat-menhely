@@ -64,7 +64,7 @@ Route::post('/register', [RegisterController::class, 'create'])
 
 
 Route::prefix('/super_admin_dashboard')
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified','role:3'])
     ->group(function () {
     Route::get('/', function (){
         return view('super_admin_views.invitations');
