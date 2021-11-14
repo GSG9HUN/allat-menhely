@@ -9,8 +9,8 @@ export default class Colors extends React.Component {
         super(props);
         this.state = {
             colors: [],
-            perPage: '',
-            total: '',
+            perPage: 0,
+            total: 0,
             currentPage: 1
         }
 

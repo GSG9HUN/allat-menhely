@@ -2,19 +2,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import AddInvitation from './AddInvitation'
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor:'gray',
-        color:'black'
-    },
-};
-
 export default class InvitationModal extends React.Component{
     constructor(props) {
         super(props);
@@ -42,7 +29,7 @@ export default class InvitationModal extends React.Component{
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
-                    style={customStyles}
+                    className={'Modal small'}
                     contentLabel="Meghívó"
                     ariaHideApp={false}
                 >

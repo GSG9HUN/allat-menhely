@@ -3,20 +3,6 @@ import Modal from 'react-modal';
 import EditSettlement from "./EditSettlement";
 import AddSettlement from './AddSettlement';
 
-
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor:'gray',
-        color:'black'
-    },
-};
-
 export default class SettlementModal extends React.Component{
     constructor(props) {
         super(props);
@@ -67,7 +53,7 @@ export default class SettlementModal extends React.Component{
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
-                    style={customStyles}
+                    className={'Modal small'}
                     contentLabel="Település"
                     ariaHideApp={false}
                 >

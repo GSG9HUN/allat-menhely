@@ -10,8 +10,8 @@ export default class Size extends React.Component {
         this.state = {
             sizes: [],
             currentPage: 1,
-            total: '',
-            perPage: '',
+            total: 0,
+            perPage: 0,
         }
 
         this.getSizes = this.getSizes.bind(this)

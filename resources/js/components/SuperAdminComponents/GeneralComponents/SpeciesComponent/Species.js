@@ -8,8 +8,8 @@ export default class Species extends React.Component {
         super(props);
         this.state = {
             species: [],
-            total: '',
-            perPage: '',
+            total: 0,
+            perPage: 0,
             currentPage: 1,
         }
         this.getSpecies = this.getSpecies.bind(this)

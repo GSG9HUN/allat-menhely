@@ -9,9 +9,9 @@ export default class Invitation extends React.Component {
         super(props);
         this.state = {
             invitations: [],
-            currentPage:'',
-            total:'',
-            perPage:'',
+            currentPage:1,
+            total:0,
+            perPage:0,
         }
 
         this.renderInvitations = this.renderInvitations.bind(this)

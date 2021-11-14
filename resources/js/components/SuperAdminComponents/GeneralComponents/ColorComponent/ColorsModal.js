@@ -3,19 +3,6 @@ import Modal from 'react-modal';
 import EditColors from "./EditColors";
 import AddColors from "./AddColors";
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: 'gray',
-        color: 'black'
-    },
-};
-
 export default class ColorsModal extends React.Component {
     constructor(props) {
         super(props);
@@ -67,7 +54,7 @@ export default class ColorsModal extends React.Component {
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
-                    style={customStyles}
+                    className={'Modal small'}
                     contentLabel="Állat színek"
                     ariaHideApp={false}
                 >

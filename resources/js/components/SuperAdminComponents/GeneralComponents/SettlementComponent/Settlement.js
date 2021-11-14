@@ -9,8 +9,8 @@ export default class Settlement extends React.Component {
         this.state = {
             settlement: [],
             currentPage: 1,
-            perPage: '',
-            total: '',
+            perPage: 0,
+            total: 0,
         }
 
         this.getSettlement = this.getSettlement.bind(this)

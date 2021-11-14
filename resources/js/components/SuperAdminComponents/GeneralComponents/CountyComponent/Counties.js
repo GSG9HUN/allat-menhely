@@ -8,8 +8,8 @@ export default class Counties extends React.Component {
         super(props);
         this.state = {
             counties: [],
-            perPage: '',
-            total: '',
+            perPage: 0,
+            total: 0,
             currentPage: 1,
         }
         this.getCounties = this.getCounties.bind(this)

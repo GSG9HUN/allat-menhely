@@ -3,20 +3,6 @@ import Modal from 'react-modal';
 import AddSize from "./AddSize";
 import EditSize from "./EditSize";
 
-
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        backgroundColor:'gray',
-        color:'black'
-    },
-};
-
 export default class SizeModal extends React.Component{
     constructor(props) {
         super(props);
@@ -66,7 +52,7 @@ export default class SizeModal extends React.Component{
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
-                    style={customStyles}
+                    className={'Modal small'}
                     contentLabel="Méret"
                     ariaHideApp={false}
                 >

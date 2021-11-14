@@ -2,6 +2,66 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100);
 .ReactModal__Overlay--after-open {
   z-index: 1;
+  background-color: rgba(80, 92, 122, 0.75) !important;
+}
+
+.Modal {
+  background: linear-gradient(to right, #243342, #362d53);
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  inset: 50% auto auto 50%;
+  border: 1px solid #cccccc;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  color: #d9e1f2;
+}
+.Modal h2 {
+  text-align: center;
+  font-size: xx-large;
+}
+.Modal label {
+  text-align: center;
+  font-size: medium;
+  margin-bottom: 15px;
+}
+.Modal input {
+  width: 200px;
+  margin: auto;
+  height: 30px;
+  font-size: larger;
+}
+.Modal button {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100rem;
+  margin: 15px 5px 0 5px;
+  color: inherit;
+  background: transparent;
+  font-size: larger;
+  padding: 1em 1em 1em 1em;
+  font-family: inherit;
+  letter-spacing: 0.2rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.Modal button::-moz-focus-inner {
+  border: 0;
+}
+.Modal button:hover,
+.Modal button:focus {
+  background: #0d80f2;
+  border-color: #0d80f2;
+  transform: translateY(-0.2rem);
+}
+
+.small {
+  width: 300px;
+  height: auto;
 }
 
 .form-item {

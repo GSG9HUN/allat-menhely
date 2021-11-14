@@ -9,8 +9,8 @@ export default class Category extends React.Component {
         super(props);
         this.state = {
             categories: [],
-            perPage: '',
-            total: '',
+            perPage: 0,
+            total: 0,
             currentPage: 1
         }
         this.getCategories = this.getCategories.bind(this)

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
 @mixin button($bcolor,
 $url,
 $x1,
@@ -18,7 +19,87 @@ $col) {
 
 .ReactModal__Overlay--after-open {
     z-index: 1;
+    background-color: rgba(80, 92, 122, 0.75) !important;
 }
+
+
+.Modal {
+    background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    inset: 50% auto auto 50%;
+    border: 1px solid rgb(204, 204, 204);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    color: hsl(220, 50%, 90%);
+
+    h2 {
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    label {
+        text-align: center;
+        font-size: medium;
+        margin-bottom: 15px;
+    }
+
+    input {
+        width: 200px;
+        margin: auto;
+        height: 30px;
+        font-size: larger;
+    }
+
+    button {
+        border: 1px solid hsla(0, 0%, 100%, .2);
+        border-radius: 100rem;
+        margin: 15px 5px 0 5px;
+        color: inherit;
+        background: transparent;
+        font-size: larger;
+        padding: 1em 1em 1em 1em;
+        font-family: inherit;
+        letter-spacing: .2rem;
+        transition: .2s;
+        cursor: pointer;
+    }
+
+    button::-moz-focus-inner {
+        border: 0;
+    }
+
+    button:hover,
+    button:focus {
+        background: hsl(210, 90%, 50%);
+        border-color: hsl(210, 90%, 50%);
+        transform: translateY(-.2rem);
+    }
+
+}
+
+
+.small {
+
+    width: 300px;
+    height: auto;
+}
+
+.medium {
+
+}
+
+.big {
+
+}
+
 
 .form-item {
     display: flex;
@@ -151,20 +232,22 @@ $col) {
         transition: 0.5s;
         border-radius: 8px;
 
-        .animated-button{
+        .animated-button {
             &:hover,
             &:focus {
                 animation: pulse 1s;
-                box-shadow: 0 0 0 2em rgba(#fff,0);
+                box-shadow: 0 0 0 2em rgba(#fff, 0);
             }
 
             @keyframes pulse {
-                0% { box-shadow: 0 0 0 0 adjust-hue(#ef6eae, 45deg); }
+                0% {
+                    box-shadow: 0 0 0 0 adjust-hue(#ef6eae, 45deg);
+                }
             }
         }
 
         button {
-            color:  #ef6eae;
+            color: #ef6eae;
             transition: 0.25s;
             background: none;
             border: 2px solid;
