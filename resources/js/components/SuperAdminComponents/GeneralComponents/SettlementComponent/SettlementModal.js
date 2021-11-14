@@ -49,7 +49,7 @@ export default class SettlementModal extends React.Component{
     createAddForm() {
         return [
             <AddSettlement closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új Település hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új Település hozzáadás</button>
         ]
     }
 

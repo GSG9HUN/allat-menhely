@@ -49,7 +49,7 @@ export default class ColorsModal extends React.Component {
     createAddForm() {
         return [
             <AddColors closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új szín hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új szín hozzáadás</button>
         ]
     }
 

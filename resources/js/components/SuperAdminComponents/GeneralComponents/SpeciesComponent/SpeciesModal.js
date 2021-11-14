@@ -49,7 +49,7 @@ export default class SpeciesModal extends React.Component{
     createAddForm() {
         return [
             <AddSpecies closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új Állatfaj hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új Állatfaj hozzáadás</button>
         ]
     }
 

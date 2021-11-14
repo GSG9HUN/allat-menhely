@@ -49,7 +49,7 @@ export default class CategoryModal extends React.Component {
     createAddForm() {
         return [
             <AddCategory closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új faj hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új faj hozzáadás</button>
         ]
     }
 

@@ -49,7 +49,7 @@ export default class SizeModal extends React.Component{
     createAddForm() {
         return [
             <AddSize closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új méret hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új méret hozzáadás</button>
         ]
     }
 

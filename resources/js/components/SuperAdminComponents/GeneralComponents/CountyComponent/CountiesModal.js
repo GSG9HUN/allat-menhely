@@ -49,7 +49,7 @@ export default class CountiesModal extends React.Component{
     createAddForm() {
         return [
             <AddCounties closeModal={this.closeModal}/>,
-            <button className={'btn btn-primary'} onClick={this.openModal}>Új megye hozzáadás</button>
+            <button className={'animated-button'} onClick={this.openModal}>Új megye hozzáadás</button>
         ]
     }
 

@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@mixin button($bcolor,
+$url,
+$x1,
+$y1,
+$bor,
+$col) {
+    background: $bcolor;
+    -webkit-mask: url($url);
+    mask: url($url);
+    -webkit-mask-size: $x1 $y1;
+    mask-size: $x1 $y1;
+    border: $bor;
+    color: $col;
+}
+
+
 .ReactModal__Overlay--after-open {
     z-index: 1;
 }
@@ -40,7 +58,12 @@
             cursor: pointer;
             border: none;
             text-indent: -9999em;
+        }
 
+        button:hover,
+        button:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+            transform: translateY(-0.4em);
         }
     }
 
@@ -56,6 +79,12 @@
             cursor: pointer;
             border: none;
             text-indent: -9999em;
+        }
+
+        button:hover,
+        button:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+            transform: translateY(-0.4em);
         }
 
     }
@@ -117,9 +146,40 @@
 
     .row-buttons {
         float: right;
+        margin-top: 15px;
+        font-family: 'Lato', sans-serif;
+        transition: 0.5s;
+        border-radius: 8px;
+
+        .animated-button{
+            &:hover,
+            &:focus {
+                animation: pulse 1s;
+                box-shadow: 0 0 0 2em rgba(#fff,0);
+            }
+
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 adjust-hue(#ef6eae, 45deg); }
+            }
+        }
+
+        button {
+            color:  #ef6eae;
+            transition: 0.25s;
+            background: none;
+            border: 2px solid;
+            line-height: 1;
+            margin: 0.5em;
+            padding: 1em 2em;
+
+            &:hover,
+            &:focus {
+                border-color: adjust-hue(#ef6eae, 45deg);
+                color: #e4cb58;;
+            }
+        }
     }
 
 }
-
 
 

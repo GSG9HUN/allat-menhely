@@ -38,7 +38,7 @@ export default class InvitationModal extends React.Component{
     render() {
         return (
             <div>
-                <button className={'btn btn-primary'} onClick={this.openModal}>Felhasználó meghívása</button>
+                <button className={'animated-button'} onClick={this.openModal}>Felhasználó meghívása</button>
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}

@@ -4320,7 +4320,7 @@ var CategoryModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddCategory__WEBPACK_IMPORTED_MODULE_2__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj faj hozz\xE1ad\xE1s"
       })];
@@ -4939,7 +4939,7 @@ var ColorsModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddColors__WEBPACK_IMPORTED_MODULE_3__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj sz\xEDn hozz\xE1ad\xE1s"
       })];
@@ -5558,7 +5558,7 @@ var CountiesModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddCounties__WEBPACK_IMPORTED_MODULE_3__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj megye hozz\xE1ad\xE1s"
       })];
@@ -6419,7 +6419,7 @@ var SettlementModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddSettlement__WEBPACK_IMPORTED_MODULE_3__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj Telep\xFCl\xE9s hozz\xE1ad\xE1s"
       })];
@@ -7038,7 +7038,7 @@ var SizeModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddSize__WEBPACK_IMPORTED_MODULE_2__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj m\xE9ret hozz\xE1ad\xE1s"
       })];
@@ -7796,7 +7796,7 @@ var SpeciesModal = /*#__PURE__*/function (_React$Component) {
       return [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AddSpecies__WEBPACK_IMPORTED_MODULE_3__["default"], {
         closeModal: this.closeModal
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: 'btn btn-primary',
+        className: 'animated-button',
         onClick: this.openModal,
         children: "\xDAj \xC1llatfaj hozz\xE1ad\xE1s"
       })];
@@ -8243,7 +8243,7 @@ var InvitationModal = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          className: 'btn btn-primary',
+          className: 'animated-button',
           onClick: this.openModal,
           children: "Felhaszn\xE1l\xF3 megh\xEDv\xE1sa"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)((react_modal__WEBPACK_IMPORTED_MODULE_1___default()), {
@@ -86428,8 +86428,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
 /******/ 			"css/superAdminCustom": 0,
+/******/ 			"css/app": 0,
 /******/ 			"css/header": 0
 /******/ 		};
 /******/ 		
@@ -86480,10 +86480,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/header.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/superAdminCustom","css/header"], () => (__webpack_require__("./resources/sass/superAdminCustom.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/superAdminCustom","css/app","css/header"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/superAdminCustom","css/app","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/superAdminCustom","css/app","css/header"], () => (__webpack_require__("./resources/sass/header.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/superAdminCustom","css/app","css/header"], () => (__webpack_require__("./resources/sass/superAdminCustom.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

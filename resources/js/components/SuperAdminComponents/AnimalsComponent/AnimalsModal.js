@@ -38,7 +38,7 @@ export default class AnimalsModal extends React.Component{
     render() {
         return (
             <div>
-                <button className={'btn btn-primary'} onClick={this.openModal}>Új állat hozzáadása</button>
+                <button className={'animated-button'} onClick={this.openModal}>Új állat hozzáadása</button>
                 <Modal
                     isOpen={this.state.open}
                     onRequestClose={this.closeModal}
