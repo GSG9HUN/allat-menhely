@@ -8347,22 +8347,22 @@ var navBarElements = [{
   subNav: [{
     title: 'Megyék',
     path: '/super_admin_dashboard/general/county',
-    src: '',
+    src: '/images/county.png',
     alt: 'Counties'
   }, {
     title: 'Települések',
     path: '/super_admin_dashboard/general/settlement',
-    src: '',
+    src: '/images/settlement.png',
     alt: 'Settlement'
   }, {
     title: 'Állat kategóriák',
     path: '/super_admin_dashboard/general/categories',
-    src: '',
+    src: '/images/turtle.png',
     alt: 'Categories'
   }, {
     title: 'Állat méretek',
     path: '/super_admin_dashboard/general/size',
-    src: '',
+    src: '/images/size.png',
     alt: 'Size'
   }, {
     title: 'Állat fajták',
@@ -8372,18 +8372,18 @@ var navBarElements = [{
   }, {
     title: 'Állat színek',
     path: '/super_admin_dashboard/general/colors',
-    src: '',
+    src: '/images/color.png',
     alt: 'Colors'
   }]
 }, {
   title: 'Menhelyek',
   path: '/super_admin_dashboard/shelters',
-  src: '',
+  src: '/images/shelter.png',
   alt: 'Menhelyek'
 }, {
   title: 'Állatok',
   path: '/super_admin_dashboard/animals',
-  src: '',
+  src: '/images/turtle.png',
   alt: 'Allatok'
 }, {
   title: 'Felhasználó meghívása',

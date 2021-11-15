@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import "variables";
 
 @mixin button($bcolor,
 $url,
@@ -134,7 +135,7 @@ $col) {
         button {
             width: 35px;
             height: 35px;
-            background: url('/images/edit.png') top left no-repeat;
+            background: url($baseURL + 'images/edit.png') top left no-repeat;
             background-size: 35px;
             cursor: pointer;
             border: none;
@@ -155,7 +156,7 @@ $col) {
         button {
             width: 35px;
             height: 35px;
-            background: url('/images/delete.png') top left no-repeat;
+            background: url($baseURL + 'images/delete.png') top left no-repeat;
             background-size: 35px;
             cursor: pointer;
             border: none;
