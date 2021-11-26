@@ -66,6 +66,7 @@ Route::post('/register', [RegisterController::class, 'create'])
 Route::prefix('/super_admin_dashboard')
     ->middleware(['auth', 'verified','role:3'])
     ->group(function () {
+
     Route::get('/', function (){
         return view('super_admin_views.invitations');
     })->name('super_admin_dashboard');
@@ -108,4 +109,10 @@ Route::prefix('/super_admin_dashboard')
             return view('super_admin_views.general.colors');
         })->name('general.colors');
     });
+});
+
+Route::prefix('/admin_dashboard')->middleware(['auth','verified','role:2'])->group(function (){
+    Route::get('/', function (){
+        return view('admin_views.welcome');
+    })->name('statistics');
 });

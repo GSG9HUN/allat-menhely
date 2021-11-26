@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .react()
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/header.scss','public/css')
-    .sass('resources/sass/superAdminCustom.scss','public/css');
+    .sass('resources/sass/superAdminCustom.scss','public/css')
+    .sass('resources/sass/adminCustom.scss','public/css');
