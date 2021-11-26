@@ -35,8 +35,6 @@ class InvitationController extends Controller
 
         Mail::to($invitation->email)->send(new RegistrationInvitationSend($invitation->invitation_token));
 
-
-
         if ($saved) {
             return response()->json([$invitation]);
         } else {

@@ -1,13 +1,13 @@
 require('./bootstrap');
 
-require('./components/SuperAdminComponents/GeneralComponents/CountyComponent/Counties')
-require('./components/SuperAdminComponents/GeneralComponents/SettlementComponent/Settlement')
-require('./components/SuperAdminComponents/GeneralComponents/CategoryComponent/Category')
-require('./components/SuperAdminComponents/GeneralComponents/SizeComponent/Size')
-require('./components/SuperAdminComponents/GeneralComponents/SpeciesComponent/Species')
-require('./components/SuperAdminComponents/GeneralComponents/ColorComponent/Colors')
+require('./Components/SuperAdminComponents/GeneralComponents/CountyComponent/Counties')
+require('./Components/SuperAdminComponents/GeneralComponents/SettlementComponent/Settlement')
+require('./Components/SuperAdminComponents/GeneralComponents/CategoryComponent/Category')
+require('./Components/SuperAdminComponents/GeneralComponents/SizeComponent/Size')
+require('./Components/SuperAdminComponents/GeneralComponents/SpeciesComponent/Species')
+require('./Components/SuperAdminComponents/GeneralComponents/ColorComponent/Colors')
 
-require('./components/SuperAdminComponents/NavBarComponent/NavBar')
-require('./components/SuperAdminComponents/InvitationComponent/Invitation')
+require('./Components/SuperAdminComponents/NavBarComponent/NavBar')
+require('./Components/SuperAdminComponents/InvitationComponent/Invitation')
 
 
