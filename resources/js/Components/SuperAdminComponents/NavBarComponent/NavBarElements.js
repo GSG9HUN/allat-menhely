@@ -7,25 +7,25 @@ export const navBarElements = [
             {
                 title:'Megyék',
                 path:'/super_admin_dashboard/general/county',
-                src:'/images/county.png',
+                src:'/images/SuperAdminImages/county.png',
                 alt: 'Counties'
             },
             {
                 title:'Települések',
                 path:'/super_admin_dashboard/general/settlement',
-                src:'/images/settlement.png',
+                src:'/images/SuperAdminImages/settlement.png',
                 alt: 'Settlement'
             },
             {
                 title:'Állat kategóriák',
                 path:'/super_admin_dashboard/general/categories',
-                src:'/images/turtle.png',
+                src:'/images/SuperAdminImages/turtle.png',
                 alt: 'Categories'
             },
             {
                 title:'Állat méretek',
                 path:'/super_admin_dashboard/general/size',
-                src:'/images/size.png',
+                src:'/images/SuperAdminImages/size.png',
                 alt: 'Size'
             },
             {
@@ -37,7 +37,7 @@ export const navBarElements = [
             {
                 title:'Állat színek',
                 path:'/super_admin_dashboard/general/colors',
-                src:'/images/color.png',
+                src:'/images/SuperAdminImages/color.png',
                 alt: 'Colors'
             },
         ]
@@ -45,19 +45,19 @@ export const navBarElements = [
     {
         title:'Menhelyek',
         path:'/super_admin_dashboard/shelters',
-        src: '/images/shelter.png',
+        src: '/images/SuperAdminImages/shelter.png',
         alt: 'Menhelyek'
     },
     {
         title:'Állatok',
         path:'/super_admin_dashboard/animals',
-        src: '/images/turtle.png',
+        src: '/images/SuperAdminImages/turtle.png',
         alt: 'Allatok'
     },
     {
         title:'Felhasználó meghívása',
         path:'/super_admin_dashboard/invitation',
-        src:'/images/new-registration.png',
+        src:'/images/SuperAdminImages/new-registration.png',
         alt:'registration'
     }
 ]

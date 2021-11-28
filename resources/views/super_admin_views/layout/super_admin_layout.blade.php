@@ -46,7 +46,6 @@
                             @yield('content')
                         </div>
                     </div>
-                    @include('resources.views.super_admin_views.footer.footer')
                 </div>
             </div>
         @endauth

@@ -99,6 +99,13 @@ body {
     padding-right: 5%;
 }
 
+.footer{
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 @media screen and (max-width: 700px) {
     .sidebar {
         width: 100%;

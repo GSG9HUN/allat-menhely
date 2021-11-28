@@ -13,57 +13,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/adminCustom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/adminCustom.css') }}" rel="stylesheet"/>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
 </head>
 
 <body>
 
-@include('admin_views.layout.sidebar.sidebar')
+<div class="wrapper">
 
-
-<div class="content">
-    <h2></h2>
-</div>
-<div class="content2">
-    <h2>Responsive Sidebar Example</h2>
-    <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or
-        less.</p>
-    <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the
-        navigation links.</p>
-    <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the
-        navigation links.</p>
-    <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the
-        navigation links.</p>
-    <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the
-        navigation links.</p>
-    <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the
-        navigation links.</p>
-    <h3>Resize the browser window to see the effect.</h3>
-</div>
-<div class="content3">
-    <div class="right">
-        <h2>Responsive Sidebar Example</h2>
-        <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px
-            or less.</p>
-        <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
-            the navigation links.</p>
-
-    </div>
-    <div class="left">
-        <h2>Responsive Sidebar Example</h2>
-        <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px
-            or less.</p>
-        <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
-            the navigation links.</p>
-
+    <div class="sidebar">
+        @include('admin_views.layout.sidebar.sidebar')
     </div>
 
+    <div class="main-panel">
+        <div class="content2">
+            <h2>Responsive Sidebar Example</h2>
+            <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px
+                or
+                less.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
+                the
+                navigation links.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
+                the
+                navigation links.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
+                the
+                navigation links.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
+                the
+                navigation links.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
+                the
+                navigation links.</p>
+            <h3>Resize the browser window to see the effect.</h3>
+        </div>
+    </div>
+
+    <div class="footer">
+        @include('admin_views.layout.footer.footer')
+    </div>
 </div>
 
-
-@include('admin_views.layout.footer.footer')
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

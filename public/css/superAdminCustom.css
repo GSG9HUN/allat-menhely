@@ -95,7 +95,7 @@
 .button-img .edit button {
   width: 35px;
   height: 35px;
-  background: url("/images/edit.png") top left no-repeat;
+  background: url("/images/SuperAdminImages/edit.png") top left no-repeat;
   background-size: 35px;
   cursor: pointer;
   border: none;
@@ -113,7 +113,7 @@
 .button-img .delete button {
   width: 35px;
   height: 35px;
-  background: url("/images/delete.png") top left no-repeat;
+  background: url("/images/SuperAdminImages/delete.png") top left no-repeat;
   background-size: 35px;
   cursor: pointer;
   border: none;

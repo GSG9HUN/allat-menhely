@@ -3799,6 +3799,95 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/Components/AdminComponents/NavBarComponent/NavBar.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Components/AdminComponents/NavBarComponent/NavBar.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _NavBarElements__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBarElements */ "./resources/js/Components/AdminComponents/NavBarComponent/NavBarElements.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var NavBar = function NavBar() {
+  var navData = _NavBarElements__WEBPACK_IMPORTED_MODULE_1__.navBarElements;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+    className: "nav",
+    children: navData.map(function (data, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        style: {
+          display: 'flex'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
+          href: data.path,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            style: {
+              width: 20,
+              height: 20
+            },
+            src: data.src,
+            alt: data.alt
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            style: {
+              marginLeft: 10
+            },
+            children: data.title
+          })]
+        })
+      }, index);
+    })
+  });
+};
+
+if (document.getElementById('admin-nav-bar')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_2__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(NavBar, {}), document.getElementById('admin-nav-bar'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/AdminComponents/NavBarComponent/NavBarElements.js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Components/AdminComponents/NavBarComponent/NavBarElements.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "navBarElements": () => (/* binding */ navBarElements)
+/* harmony export */ });
+var navBarElements = [{
+  title: 'Feltöltés',
+  path: '',
+  src: 'images/AdminImages/upload-file.png',
+  alt: 'Feltöltés'
+}, {
+  title: 'Szerkesztés',
+  path: '',
+  src: '',
+  alt: 'Szerkeztés'
+}, {
+  title: 'Adatok',
+  path: '',
+  src: '',
+  alt: 'Adatok'
+}, {
+  title: 'Profil',
+  path: '',
+  src: 'images/AdminImages/man.png',
+  alt: 'Profil'
+}];
+
+/***/ }),
+
 /***/ "./resources/js/Components/ErrorWriter.js":
 /*!************************************************!*\
   !*** ./resources/js/Components/ErrorWriter.js ***!
@@ -7979,6 +8068,7 @@ var Invitation = /*#__PURE__*/function (_React$Component) {
       var _this3 = this;
 
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: 'table-container',
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
           className: 'data-table',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
@@ -8277,22 +8367,22 @@ var navBarElements = [{
   subNav: [{
     title: 'Megyék',
     path: '/super_admin_dashboard/general/county',
-    src: '/images/county.png',
+    src: '/images/SuperAdminImages/county.png',
     alt: 'Counties'
   }, {
     title: 'Települések',
     path: '/super_admin_dashboard/general/settlement',
-    src: '/images/settlement.png',
+    src: '/images/SuperAdminImages/settlement.png',
     alt: 'Settlement'
   }, {
     title: 'Állat kategóriák',
     path: '/super_admin_dashboard/general/categories',
-    src: '/images/turtle.png',
+    src: '/images/SuperAdminImages/turtle.png',
     alt: 'Categories'
   }, {
     title: 'Állat méretek',
     path: '/super_admin_dashboard/general/size',
-    src: '/images/size.png',
+    src: '/images/SuperAdminImages/size.png',
     alt: 'Size'
   }, {
     title: 'Állat fajták',
@@ -8302,23 +8392,23 @@ var navBarElements = [{
   }, {
     title: 'Állat színek',
     path: '/super_admin_dashboard/general/colors',
-    src: '/images/color.png',
+    src: '/images/SuperAdminImages/color.png',
     alt: 'Colors'
   }]
 }, {
   title: 'Menhelyek',
   path: '/super_admin_dashboard/shelters',
-  src: '/images/shelter.png',
+  src: '/images/SuperAdminImages/shelter.png',
   alt: 'Menhelyek'
 }, {
   title: 'Állatok',
   path: '/super_admin_dashboard/animals',
-  src: '/images/turtle.png',
+  src: '/images/SuperAdminImages/turtle.png',
   alt: 'Allatok'
 }, {
   title: 'Felhasználó meghívása',
   path: '/super_admin_dashboard/invitation',
-  src: '/images/new-registration.png',
+  src: '/images/SuperAdminImages/new-registration.png',
   alt: 'registration'
 }];
 
@@ -8330,7 +8420,8 @@ var navBarElements = [{
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Super admin components
+
 
 __webpack_require__(/*! ./Components/SuperAdminComponents/GeneralComponents/CountyComponent/Counties */ "./resources/js/Components/SuperAdminComponents/GeneralComponents/CountyComponent/Counties.js");
 
@@ -8346,7 +8437,10 @@ __webpack_require__(/*! ./Components/SuperAdminComponents/GeneralComponents/Colo
 
 __webpack_require__(/*! ./Components/SuperAdminComponents/NavBarComponent/NavBar */ "./resources/js/Components/SuperAdminComponents/NavBarComponent/NavBar.js");
 
-__webpack_require__(/*! ./Components/SuperAdminComponents/InvitationComponent/Invitation */ "./resources/js/Components/SuperAdminComponents/InvitationComponent/Invitation.js");
+__webpack_require__(/*! ./Components/SuperAdminComponents/InvitationComponent/Invitation */ "./resources/js/Components/SuperAdminComponents/InvitationComponent/Invitation.js"); //admin components
+
+
+__webpack_require__(/*! ./Components/AdminComponents/NavBarComponent/NavBar */ "./resources/js/Components/AdminComponents/NavBarComponent/NavBar.js"); //guest components
 
 /***/ }),
 

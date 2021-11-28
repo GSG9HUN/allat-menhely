@@ -1,28 +1,10 @@
-<div class="sidebar" id="sidebar">
-    <h1>Virtuális Menhely</h1>
-    <a class="active" href="#home">
-      <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-      <span>Feltöltés</span>
-    </a>
+<div class="sidebar">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+           <a style="padding: 0;font-size: 100%" href="{{route('statistics')}}"> <h1 style="text-align: center" class="simple-text logo-normal">{{ __('Virtuális Menhely') }}</h1></a>
+        </div>
+        <div id="admin-nav-bar">
 
-    <a href="#news">
-      <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-      <span>Szerkesztes</span>
-    </a>
-
-    <a href="#contact">
-      <span class="icon"><ion-icon name="analytics-outline"></ion-icon> </span>
-      <span>Adatok</span>
-    </a>
-
-    <a href="#about">
-      <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-      <span>Profil</span>
-    </a>
-
-    <a href="#about">
-      <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-      <span>Kilepes</span>
-    </a>
-  </div>
-
+        </div>
+    </div>
+</div>

@@ -56,7 +56,7 @@ export default class Invitation extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={'table-container'}>
                 <table className={'data-table'}>
                     <thead>
                         <tr>
