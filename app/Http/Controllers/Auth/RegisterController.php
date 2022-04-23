@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::ADMIN_DASHBOARD;
+    protected string $redirectTo = RouteServiceProvider::ADMIN_DASHBOARD;
 
     /**
      * Create a new controller instance.
@@ -65,7 +65,7 @@ class RegisterController extends Controller
     {
         $token = $request['invitationToken'];
 
-        Invitation::where('invitation_token', $token)
+        Invitation::query()->where('invitation_token', $token)
             ->where('email',$request['email'])
             ->update([
                 'registered_at'=>Carbon::now()

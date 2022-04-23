@@ -116,3 +116,6 @@ Route::prefix('/admin_dashboard')->middleware(['auth','verified','role:2'])->gro
         return view('admin_views.welcome');
     })->name('statistics');
 });
+
+
+Route::get('/ip',[\App\Http\Controllers\TestControllers\GeoLocationController::class,'index']);
